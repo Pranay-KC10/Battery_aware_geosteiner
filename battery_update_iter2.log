@@ -1,0 +1,22 @@
+🔋 Battery Update Wrapper
+=========================
+Terminals file: terminals_iter1.txt
+Solution file:  solution_iter1.txt
+Output file:    terminals_iter2.txt
+Charge rate:    15.0%
+Demand rate:    3.0%
+=========================
+
+📊 Coverage Status: 6/20 terminals covered
+
+🔋 Updating Battery Levels:
+   Equation: battery[j]^(t+1) = battery[j]^t + charge_rate×(1-not_covered[j]) - demand_rate[j]
+   Where: charge_rate=15.0%, demand_rate=3.0%
+
+
+📊 Battery Update Summary:
+   Average battery level: 57.7%
+   Fully charged terminals: 1/20
+   Terminals needing charge: 19
+✅ Battery update completed successfully!
+📁 Updated terminals saved to: terminals_iter2.txt

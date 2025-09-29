@@ -1,0 +1,160 @@
+ % ./bb
+ % Args:
+ % Phase 1: 0.00 seconds
+
+%%BeginSetup
+
+0 1 0 1 SetAxes
+
+10 DefineTerminals
+	.4588350000000000	.2373240000000000	DT
+	.1270640000000000	.3509960000000000	DT
+	.1544540000000000	.4808220000000000	DT
+	.9474030000000000	.1441120000000000	DT
+	.2867390000000000	.0565890000000000	DT
+	.1326890000000000	.1166050000000000	DT
+	.6273950000000000	.2122140000000000	DT
+	.0794880000000000	.7970990000000000	DT
+	.0327480000000000	.8803250000000000	DT
+	.3110550000000000	.8689670000000000	DT
+
+%%EndSetup
+
+ % _gst_initialize_constraint_pool: 0.00 seconds.
+ % Constraint pool initialized with:
+ % 	1	Total degree rows	14	coeffs.
+ % 	10	Cutset rows		34	coeffs.
+ % 	0	Incompatibility rows	0	coeffs.
+ % 	8	2-terminal SEC rows	21	coeffs.
+ % 	1	At least one FST rows	14	coeffs.
+ % 	55	Total rows in pool	47	in LP
+ % @PMEM 55 rows, 1 blocks, 93 nzfree, 0 nzwasted, 332 nztotal
+ % _gst_build_initial_formulation: 0.00 seconds.
+% Resuming node 0
+ % @PAP adding 47 rows, 163 nz to LP
+  % @PL 47 rows, 24 cols, 187 nonzeros, 29 slack, 18 tight.
+  % @D deleting 29 slack rows
+  % @PAP adding 3 rows, 7 nz to LP
+  % @PL 21 rows, 24 cols, 103 nonzeros, 7 slack, 14 tight.
+  % @D deleting 7 slack rows
+  % @PAP adding 4 rows, 11 nz to LP
+  % @PL 18 rows, 24 cols, 97 nonzeros, 1 slack, 17 tight.
+  % @D deleting 1 slack rows
+  % Node 0 LP 1 Solution, length = 7984301.741385, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.000000 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.000000 (FST 1)
+  % DEBUG LP_VARS: x[2] = 1.000000 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.000000 (FST 3)
+  % DEBUG LP_VARS: x[4] = 1.000000 (FST 4)
+  % DEBUG LP_VARS: x[5] = 1.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 1.000000 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.000000 (FST 7)
+  % DEBUG LP_VARS: x[8] = 1.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.000000 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.000000 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.000000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.009420 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.000000 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.000000 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 0.990580 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.000000 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.000000 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 0.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 0.000000 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 0.000000 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 0.000000 (terminal 9)
+ % 1 fractional variables
+ % @LO 0.00   7.98430174138487913638 99.9000000000
+ % @LN 0.00   7.98430174138487913638 99.9000000000
+ %   Final iteration: 0.00/0.00/0.00/0.00/0.00/0.00/0.00
+
+  %  Carefully choosing branching variable, nfrac = 1
+  % Initial guess is x13, Z0 = 7984301.74138488        , Z1 = 7984301.74138488        
+
+  % 	x13 = 0,	Z0 = 7985920.35075522        
+  % 	x13 = 1,	Z1 = 8066085.28926668        
+  %   New best:  x13, Z = 7985920.35075522        
+  % Best branch is x13, Z0 = 7985920.35075522        , Z1 = 8066085.28926668        
+
+ % @NC    1    0	x13 = 0	7985920.350755
+ % @NC    2    0	x13 = 1	8066085.289267
+ %       0     2  7984301.7414                7985920.3508
+% @LO 0.00   7.98430174138487913638 99.9000000000
+% @LN 0.00   7.98592035075521522458 99.9000000000
+% Resuming node 1 at   7.98592035075521522458
+ % @PAP adding 17 rows, 71 nz to LP
+  % @PL 17 rows, 24 cols, 95 nonzeros, 1 slack, 16 tight.
+  % Node 1 LP 1 Solution, length = 7985920.350755, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.000000 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.000000 (FST 1)
+  % DEBUG LP_VARS: x[2] = 1.000000 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.000000 (FST 3)
+  % DEBUG LP_VARS: x[4] = 1.000000 (FST 4)
+  % DEBUG LP_VARS: x[5] = 1.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 1.000000 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.000000 (FST 7)
+  % DEBUG LP_VARS: x[8] = 1.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.000000 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.000000 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.000000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.000000 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.000000 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.000000 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.000000 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 0.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 0.000000 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 0.000000 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 0.000000 (terminal 9)
+ % 0 fractional variables
+ %  	=== 1 nodes cut off ===
+ % @UO 0.00   6.48592035075521522458 -23.1270185090
+ % @UN 0.00   6.48592035075521522458 -23.1270185090
+ % *     1     0  6485920.3508  6485920.3508                 x13 D     0     1
+
+ % Certificate of solution:
+ % @C	.1435036374490092	.7633750660678332
+ % @C	.1606704657889116	.1392797240736805
+ % @C	.2809336405926924	.0931619940734952
+%%Page: 1 1
+BeginPlot
+	Plot_Terminals
+ % fs2: 9 2 7
+	9 T	.1435036374490092	.7633750660678332	S
+	.1435036374490092	.7633750660678332	2 T	S
+	.1435036374490092	.7633750660678332	7 T	S
+ % fs4: 5 1 0 4
+	5 T	.1606704657889116	.1392797240736805	S
+	.1606704657889116	.1392797240736805	1 T	S
+	.1606704657889116	.1392797240736805	.2809336405926924	.0931619940734952	S
+	.2809336405926924	.0931619940734952	0 T	S
+	.2809336405926924	.0931619940734952	4 T	S
+ % fs5: 8 7
+	8 T	7 T	S
+ % fs6: 2 1
+	2 T	1 T	S
+ % fs8: 6 0
+	6 T	0 T	S
+  (Euclidean SMT:  10 points,  length = 6.485920350755215,  0.00 seconds)
+EndPlot
+
+% @0 Euclidean SMT
+% N M Nodes LPs P1CPU P2CPU TotCPU
+% @1 10 14 2 2 0.00 0.00 0.00
+% Z RootZ %Gap RootLPs RootCPU RedMST
+% @2 6.485920350755215 7984301.741385 -23.10206 1 0.00 -233.8811
+% InitPRows InitPNZ InitLPRows InitLPNZ
+% @3 55 184 47 188
+% RootPRows RootPNZ RootLPRows RootLPNZ
+% @4 55 184 17 95
+% FinalPRows FinalPNZ FinalLPRows FinalLPNZ
+% @5 55 184 17 95
+% SMTFSTs SMTAvgFSTSz SMTMaxFSTSz #2FSTs #3FSTs ... #10FSTS #>10FSTs
+% @6 5 2.600000 4 3 1 1 0 0 0 0 0 0 0

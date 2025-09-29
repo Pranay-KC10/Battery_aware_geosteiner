@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoSteiner Network Optimization - Budget-Constrained Solution</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 20px; background: #f8f9fa; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; text-align: center; margin-bottom: 30px; }
+        .network-container { display: flex; gap: 30px; margin: 30px 0; }
+        .network-svg { flex: 2; border: 2px solid #ddd; border-radius: 8px; background: #fafafa; }
+        .sidebar { flex: 1; }
+        .terminal-label { font-size: 14px; font-weight: bold; fill: #333; }
+        .battery-text { font-size: 12px; fill: #666; }
+        .metrics, .legend, .fst-details { background: #f8f9fa; padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 4px solid #3498db; }
+        .source-constraint { background: #d4edda; padding: 15px; margin: 20px 0; border-radius: 8px; border-left: 4px solid #28a745; }
+        .section { background: #fff; margin: 30px 0; padding: 25px; border-radius: 8px; border: 1px solid #e1e8ed; }
+        .constraint-check { padding: 10px; margin: 8px 0; border-radius: 5px; background: #f8f9fa; border-left: 3px solid #28a745; }
+        table { width: 100%; border-collapse: collapse; }
+        td { padding: 8px; border-bottom: 1px solid #eee; }
+        .legend-item { display: flex; align-items: center; margin: 10px 0; }
+        .legend-symbol { width: 20px; height: 20px; margin-right: 10px; border-radius: 50%; }
+        .covered-terminal { background: #00ff00; border: 2px solid #333; }
+        .uncovered-terminal { background: none; border: 2px dashed #999; position: relative; }
+        .selected-fst { background: #007bff; }
+        .steiner-point { background: #6c757d; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌐 GeoSteiner Network Optimization - Budget-Constrained Solution</h1>
+        <div class="network-container">
+            <svg width="800" height="600" class="network-svg">
+                <line x1="248" y1="514" x2="142" y2="491" stroke="#3498db" stroke-width="6" opacity="0.7"/>
+                <line x1="248" y1="514" x2="371" y2="431" stroke="#3498db" stroke-width="6" opacity="0.7"/>
+                <line x1="248" y1="514" x2="250" y2="521" stroke="#3498db" stroke-width="6" opacity="0.7"/>
+                <circle cx="248" cy="514" r="5" fill="#5d6d7e" stroke="#34495e" stroke-width="1"/>
+                <line x1="489" y1="443" x2="371" y2="431" stroke="#3498db" stroke-width="6" opacity="0.7"/>
+                <line x1="713" y1="477" x2="489" y2="443" stroke="#3498db" stroke-width="6" opacity="0.7"/>
+                <circle cx="371" cy="431" r="8" fill="#27ae60" stroke="#333" stroke-width="2"/>
+                <text x="371" y="411" text-anchor="middle" class="terminal-label">0</text>
+                <text x="371" y="456" text-anchor="middle" class="battery-text">100.0%</text>
+                <circle cx="138" cy="374" r="8" fill="#e67e22" stroke="#999" stroke-width="3" stroke-dasharray="5,3"/>
+                <text x="138" y="354" text-anchor="middle" class="terminal-label">1</text>
+                <text x="138" y="399" text-anchor="middle" class="battery-text">33.6%</text>
+                <text x="138" y="369" text-anchor="middle" font-size="9" fill="#e74c3c" font-weight="bold">✗</text>
+                <circle cx="158" cy="309" r="8" fill="#e67e22" stroke="#999" stroke-width="3" stroke-dasharray="5,3"/>
+                <text x="158" y="289" text-anchor="middle" class="terminal-label">2</text>
+                <text x="158" y="334" text-anchor="middle" class="battery-text">22.7%</text>
+                <text x="158" y="304" text-anchor="middle" font-size="9" fill="#e74c3c" font-weight="bold">✗</text>
+                <circle cx="713" cy="477" r="8" fill="#52c41a" stroke="#333" stroke-width="2"/>
+                <text x="713" y="457" text-anchor="middle" class="terminal-label">3</text>
+                <text x="713" y="502" text-anchor="middle" class="battery-text">76.5%</text>
+                <circle cx="250" cy="521" r="8" fill="#27ae60" stroke="#333" stroke-width="2"/>
+                <text x="250" y="501" text-anchor="middle" class="terminal-label">4</text>
+                <text x="250" y="546" text-anchor="middle" class="battery-text">94.3%</text>
+                <circle cx="142" cy="491" r="8" fill="#f39c12" stroke="#333" stroke-width="2"/>
+                <text x="142" y="471" text-anchor="middle" class="terminal-label">5</text>
+                <text x="142" y="516" text-anchor="middle" class="battery-text">48.5%</text>
+                <circle cx="489" cy="443" r="8" fill="#e67e22" stroke="#333" stroke-width="2"/>
+                <text x="489" y="423" text-anchor="middle" class="terminal-label">6</text>
+                <text x="489" y="468" text-anchor="middle" class="battery-text">23.6%</text>
+                <circle cx="105" cy="151" r="8" fill="#e74c3c" stroke="#999" stroke-width="3" stroke-dasharray="5,3"/>
+                <text x="105" y="131" text-anchor="middle" class="terminal-label">7</text>
+                <text x="105" y="176" text-anchor="middle" class="battery-text">0.0%</text>
+                <text x="105" y="146" text-anchor="middle" font-size="9" fill="#e74c3c" font-weight="bold">✗</text>
+                <circle cx="72" cy="109" r="8" fill="#e74c3c" stroke="#999" stroke-width="3" stroke-dasharray="5,3"/>
+                <text x="72" y="89" text-anchor="middle" class="terminal-label">8</text>
+                <text x="72" y="134" text-anchor="middle" class="battery-text">9.9%</text>
+                <text x="72" y="104" text-anchor="middle" font-size="9" fill="#e74c3c" font-weight="bold">✗</text>
+                <circle cx="267" cy="115" r="8" fill="#e74c3c" stroke="#999" stroke-width="3" stroke-dasharray="5,3"/>
+                <text x="267" y="95" text-anchor="middle" class="terminal-label">9</text>
+                <text x="267" y="140" text-anchor="middle" class="battery-text">0.0%</text>
+                <text x="267" y="110" text-anchor="middle" font-size="9" fill="#e74c3c" font-weight="bold">✗</text>
+            </svg>
+            <div class="sidebar">
+                <div class="metrics">
+                    <h3>📊 Solution Metrics</h3>
+                    <table>
+                        <tr><td><strong>Selected FSTs:</strong></td><td>3 of 14</td></tr>
+                        <tr><td><strong>Total Terminals:</strong></td><td>10</td></tr>
+                        <tr><td><strong>Covered Terminals:</strong></td><td>5</td></tr>
+                        <tr><td><strong>Uncovered Terminals:</strong></td><td>5</td></tr>
+                        <tr><td><strong>Coverage Rate:</strong></td><td>50.0%</td></tr>
+                        <tr><td><strong>Total Cost:</strong></td><td>1,495,410</td></tr>
+                        <tr><td><strong>Budget Utilization:</strong></td><td>99.7%</td></tr>
+                    </table>
+                </div>
+                <div class="legend">
+                    <h3>🎯 Legend</h3>
+                    <div class="legend-item">
+                        <div class="legend-symbol covered-terminal"></div>
+                        <span>Covered Terminal</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-symbol uncovered-terminal"></div>
+                        <span>Uncovered Terminal</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-symbol steiner-point"></div>
+                        <span>Steiner Point</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-symbol selected-fst"></div>
+                        <span>Selected FST Edge</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="metrics">
+            <h3>📁 Input Files</h3>
+            <table>
+                <tr><td><strong>Terminals:</strong></td><td><code>terminals.txt</code></td></tr>
+                <tr><td><strong>FSTs:</strong></td><td><code>fsts.txt</code></td></tr>
+                <tr><td><strong>Solution:</strong></td><td><code>solution_high.txt</code></td></tr>
+            </table>
+        </div>
+        <div class="section">
+            <h2>📈 Constraint Verification</h2>
+            <div class="constraint-check constraint-satisfied">
+                <strong>⚠️ Terminal Coverage:</strong> 5 out of 10 terminals covered (T1 T2 T7 T8 T9 uncovered)
+            </div>
+            <div class="constraint-check constraint-satisfied">
+                <strong>✅ Budget Constraint:</strong> Tree costs (1,495,410) ≤ Budget (1,500,000)
+            </div>
+            <div class="constraint-check constraint-satisfied">
+                <strong>✅ Spanning Constraint:</strong> Σ(|FST|-1)×x + Σnot_covered = 9 ✓
+            </div>
+            <div class="constraint-check constraint-satisfied">
+                <strong>✅ Network Connectivity:</strong> All FSTs form one connected component
+            </div>
+        </div>
+        <div class="section">
+            <h2>📊 Selected FST Details</h2>
+            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                <thead style="background: #f8f9fa;">
+                    <tr>
+                        <th style="padding: 12px; border: 1px solid #ddd;">FST ID</th>
+                        <th style="padding: 12px; border: 1px solid #ddd;">Terminals</th>
+                        <th style="padding: 12px; border: 1px solid #ddd;">Steiner Points</th>
+                        <th style="padding: 12px; border: 1px solid #ddd;">Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background: #e8f5e8;">
+                        <td style="padding: 10px; border: 1px solid #ddd; background: #28a745; color: white; font-weight: bold;">0</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">T5, T0, T4</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">1</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Y-junction</td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td style="padding: 10px; border: 1px solid #ddd; ">1</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">T5, T1, T4</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">1</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Y-junction</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td style="padding: 10px; border: 1px solid #ddd; ">2</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">T9, T2, T7</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">1</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Y-junction</td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td style="padding: 10px; border: 1px solid #ddd; ">3</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">T9, T7, T8</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">1</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Y-junction</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td style="padding: 10px; border: 1px solid #ddd; ">4</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">T5, T1, T0, T4</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">1</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Y-junction</td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td style="padding: 10px; border: 1px solid #ddd; ">5</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">T8, T7</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">0</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Direct</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td style="padding: 10px; border: 1px solid #ddd; ">6</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">T2, T1</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">0</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Direct</td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td style="padding: 10px; border: 1px solid #ddd; ">7</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">T4, T5</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">0</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Direct</td>
+                    </tr>
+                    <tr style="background: #e8f5e8;">
+                        <td style="padding: 10px; border: 1px solid #ddd; background: #28a745; color: white; font-weight: bold;">8</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">T6, T0</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">0</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Direct</td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td style="padding: 10px; border: 1px solid #ddd; ">9</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">T5, T1</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">0</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Direct</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td style="padding: 10px; border: 1px solid #ddd; ">10</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">T9, T7</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">0</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Direct</td>
+                    </tr>
+                    <tr style="background: #f8f9fa;">
+                        <td style="padding: 10px; border: 1px solid #ddd; ">11</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">T0, T4</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">0</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Direct</td>
+                    </tr>
+                    <tr style="background: white;">
+                        <td style="padding: 10px; border: 1px solid #ddd; ">12</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">T2, T7</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">0</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Direct</td>
+                    </tr>
+                    <tr style="background: #e8f5e8;">
+                        <td style="padding: 10px; border: 1px solid #ddd; background: #28a745; color: white; font-weight: bold;">13</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">T3, T6</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">0</td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">Direct</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="tech-details">
+            <h2>🔧 Technical Implementation Details</h2>
+
+            <h3>Objective Function:</h3>
+            <p><strong>Minimize:</strong> Σ(tree_cost[i] + α×battery_cost[i])×x[i] + β×Σnot_covered[j]</p>
+
+            <h3>Constraint Formulation:</h3>
+            <ul>
+                <li><strong>Budget Constraint:</strong> Σ tree_cost[i] × x[i] ≤ 1,500,000</li>
+                <li><strong>Modified Spanning Constraint:</strong> Σ(|FST[i]| - 1) × x[i] + Σnot_covered[j] = 9</li>
+                <li><strong>Soft Cutset Constraint 1:</strong> not_covered[j] ≤ 1 - x[i] ∀(i,j) where FST i contains terminal j</li>
+                <li><strong>Soft Cutset Constraint 2:</strong> Σᵢ x[i] ≤ n·(1 - not_covered[j]) ∀j, where n = |{FSTs covering terminal j}|</li>
+                <li><strong>Binary Constraints:</strong> x[i] ∈ {0,1}, not_covered[j] ∈ [0,1]</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

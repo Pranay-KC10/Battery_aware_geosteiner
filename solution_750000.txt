@@ -1,0 +1,1512 @@
+ % ./bb
+ % Args:
+ % Phase 1: 0.00 seconds
+
+%%BeginSetup
+
+0 1 0 1 SetAxes
+
+10 DefineTerminals
+	.4588350000000000	.2373240000000000	DT
+	.1270640000000000	.3509960000000000	DT
+	.1544540000000000	.4808220000000000	DT
+	.9474030000000000	.1441120000000000	DT
+	.2867390000000000	.0565890000000000	DT
+	.1326890000000000	.1166050000000000	DT
+	.6273950000000000	.2122140000000000	DT
+	.0794880000000000	.7970990000000000	DT
+	.0327480000000000	.8803250000000000	DT
+	.3110550000000000	.8689670000000000	DT
+
+%%EndSetup
+
+ % _gst_initialize_constraint_pool: 0.00 seconds.
+ % Constraint pool initialized with:
+ % 	1	Total degree rows	14	coeffs.
+ % 	10	Cutset rows		34	coeffs.
+ % 	0	Incompatibility rows	0	coeffs.
+ % 	8	2-terminal SEC rows	21	coeffs.
+ % 	1	At least one FST rows	14	coeffs.
+ % 	55	Total rows in pool	47	in LP
+ % @PMEM 55 rows, 1 blocks, 93 nzfree, 0 nzwasted, 332 nztotal
+ % _gst_build_initial_formulation: 0.00 seconds.
+% Resuming node 0
+ % @PAP adding 47 rows, 163 nz to LP
+  % @PL 47 rows, 24 cols, 187 nonzeros, 20 slack, 27 tight.
+  % @D deleting 20 slack rows
+  % @PAP adding 2 rows, 5 nz to LP
+  % @PL 29 rows, 24 cols, 126 nonzeros, 3 slack, 26 tight.
+  % @D deleting 3 slack rows
+  % @PAP adding 2 rows, 6 nz to LP
+  % @PL 28 rows, 24 cols, 125 nonzeros, 2 slack, 26 tight.
+  % @D deleting 2 slack rows
+  % Node 0 LP 1 Solution, length = 9472073.363585, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.000000 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.000000 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.630398 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.369602 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.000000 (FST 4)
+  % DEBUG LP_VARS: x[5] = 0.630398 (FST 5)
+  % DEBUG LP_VARS: x[6] = 1.000000 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.000000 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.000000 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.000000 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.000000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.260795 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.000000 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.000000 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 1.000000 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 1.000000 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 0.369602 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 0.369602 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 0.369602 (terminal 9)
+ % 4 fractional variables
+ % @LO 0.00   9.47207336358536089449 99.9000000000
+ % @LN 0.00   9.47207336358536089449 99.9000000000
+ %   Final iteration: 0.00/0.00/0.00/0.00/0.00/0.00/0.00
+
+  %  Carefully choosing branching variable, nfrac = 4
+  % Initial guess is x12, Z0 = 9472073.36358536        , Z1 = 9503723.98100009        
+
+  % 	x5 = 1,	Z1 = 9544393.42640283        
+  % 	x5 = 0,	Z0 = 9498152.11932029        
+  %   New best:  x5, Z = 9498152.11932029        
+  % 	x2 = 1,	Z1 = 9719737.0367333         
+  % 	x2 = 0,	Z0 = 9498152.11932029        
+  %   New best:  x2, Z = 9498152.11932029        
+  % 	x3 = 0,	Z0 = 9544393.42640283        
+  % 	x3 = 1,	Z1 = 9498152.11932029        
+  % 	x12 = 1,	Z1 = 9604333.22520987        
+  % 	x12 = 0,	Z0 = 9540725.79013971        
+  %   New best:  x12, Z = 9540725.79013971        
+  % Best branch is x12, Z0 = 9540725.79013971        , Z1 = 9604333.22520987        
+
+ % @NC    1    0	x12 = 0	9540725.790140
+ % @NC    2    0	x12 = 1	9604333.225210
+ %       0     2  9472073.3636                9540725.7901
+% @LO 0.00   9.47207336358536089449 99.9000000000
+% @LN 0.00   9.54072579013970667461 99.9000000000
+% Resuming node 1 at   9.54072579013970667461
+ % @PAP adding 26 rows, 95 nz to LP
+  % @PL 26 rows, 24 cols, 119 nonzeros, 9 slack, 17 tight.
+  % Node 1 LP 1 Solution, length = 9540725.790140, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.000000 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.159044 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.579522 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.420478 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.000000 (FST 4)
+  % DEBUG LP_VARS: x[5] = 0.579522 (FST 5)
+  % DEBUG LP_VARS: x[6] = 1.000000 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.000000 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.159044 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.000000 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.000000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.000000 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.000000 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.840956 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.840956 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 0.420478 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 0.420478 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 0.420478 (terminal 9)
+ % 5 fractional variables
+ %   Final iteration: 0.00/0.00/0.00/0.00/0.00/0.00/0.00
+
+  %  Carefully choosing branching variable, nfrac = 5
+  % Initial guess is x1, Z0 = 9540725.79013971        , Z1 = 9728714.53190023        
+
+  % 	x5 = 1,	Z1 = 9778242.08725782        
+  % 	x5 = 0,	Z0 = 9650686.77631984        
+  %   New best:  x5, Z = 9650686.77631984        
+  % 	x2 = 1,	Z1 = 9778242.08725782        
+  % 	x2 = 0,	Z0 = 9650686.77631984        
+  % 	x3 = 1,	Z1 = 9650686.77631984        
+  % 	x3 = 0,	Z0 = 9778242.08725782        
+  % 	x1 = 1,	Z1 = 10006028.9585609        
+  % 	x1 = 0,	Z0 = 9562084.06823071        
+  % 	x9 = 1,	Z1 = 9694967.08431691        
+  % 	x9 = 0,	Z0 = 9543413.02044924        
+  % Best branch is x5, Z0 = 9650686.77631984        , Z1 = 9778242.08725782        
+
+ % @NC    3    1	x5 = 0	9650686.776320
+ % @NC    4    1	x5 = 1	9778242.087258
+ %       1     3  9540725.7901                9604333.2252   x12 D     0     1
+% @LO 0.00   9.54072579013970667461 99.9000000000
+% @LN 0.00   9.60433322520986898496 99.9000000000
+% Resuming node 2 at   9.60433322520986898496
+ % @PAP adding 26 rows, 95 nz to LP
+  % @PL 26 rows, 24 cols, 119 nonzeros, 8 slack, 18 tight.
+  % @D deleting 8 slack rows
+  % @PAP adding 4 rows, 11 nz to LP
+  % @PL 22 rows, 24 cols, 109 nonzeros, 4 slack, 18 tight.
+  % @PAP adding 3 rows, 10 nz to LP
+  % @PL 25 rows, 24 cols, 119 nonzeros, 4 slack, 21 tight.
+  % @D deleting 4 slack rows
+  % @PAP adding 1 rows, 2 nz to LP
+  % @PL 22 rows, 24 cols, 107 nonzeros, 1 slack, 21 tight.
+  % @D deleting 1 slack rows
+  % Node 2 LP 1 Solution, length = 9616360.282754, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.000000 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.000000 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.000000 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.500000 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.000000 (FST 4)
+  % DEBUG LP_VARS: x[5] = 0.500000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.668627 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.000000 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.000000 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.500000 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.000000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 1.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.331373 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.000000 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 1.000000 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 1.000000 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 0.000000 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 0.500000 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 0.500000 (terminal 9)
+ % 4 fractional variables
+ % @LO 0.00   9.60433322520986898496 99.9000000000
+ % @LN 0.00   9.61636028275445653435 99.9000000000
+ %   Final iteration: 0.00/0.00/0.00/0.00/0.00/0.00/0.00
+
+  %  Carefully choosing branching variable, nfrac = 4
+  % Initial guess is x10, Z0 = 9616360.28275446        , Z1 = 9625279.87036757        
+
+  % 	x10 = 1,	Z1 = 9626892.6025591         
+  % 	x10 = 0,	Z0 = 9793235.28031004        
+  %   New best:  x10, Z = 9626892.6025591         
+  % 	x5 = 0,	Z0 = 9971888.51735148        
+  % 	x5 = 1,	Z1 = 9626892.6025591         
+  %   New best:  x5, Z = 9626892.6025591         
+  % 	x3 = 0,	Z0 = 9626892.6025591         
+  % 	x3 = 1,	Z1 = 1.79769313486232e+308   
+   % @PL 21 rows, 24 cols, 105 nonzeros, 2 slack, 19 tight.
+   % @D deleting 2 slack rows
+   % @PAP adding 2 rows, 6 nz to LP
+   % @PL 21 rows, 24 cols, 106 nonzeros, 1 slack, 20 tight.
+   % @D deleting 1 slack rows
+   % @PAP adding 11 rows, 29 nz to LP
+   % @PL 31 rows, 24 cols, 133 nonzeros, 5 slack, 26 tight.
+   % @D deleting 5 slack rows
+ % suspending node 2 at  10.61531362175118964331
+% @LO 0.00   9.61636028275445653435 99.9000000000
+% @LN 0.00   9.65068677631984250809 99.9000000000
+% Resuming node 3 at   9.65068677631984250809
+ % @PAP adding 26 rows, 95 nz to LP
+  % @PL 26 rows, 24 cols, 119 nonzeros, 11 slack, 15 tight.
+  % @PAP adding 4 rows, 11 nz to LP
+  % @PL 30 rows, 24 cols, 130 nonzeros, 11 slack, 19 tight.
+  % @D deleting 11 slack rows
+  % @PAP adding 2 rows, 8 nz to LP
+  % @PL 21 rows, 24 cols, 105 nonzeros, 2 slack, 19 tight.
+  % @D deleting 2 slack rows
+  % @PAP adding 4 rows, 11 nz to LP
+  % @PL 23 rows, 24 cols, 108 nonzeros, 1 slack, 22 tight.
+  % @D deleting 1 slack rows
+  % Node 3 LP 1 Solution, length = 10087202.599893, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.000000 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.287206 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.046127 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.953873 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.287206 (FST 4)
+  % DEBUG LP_VARS: x[5] = 0.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.287206 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.000000 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.287206 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.000000 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.000000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.712794 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.712794 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.712794 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.712794 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 0.046127 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 0.046127 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 0.046127 (terminal 9)
+ % 6 fractional variables
+ % suspending node 3 at  10.08720259989308587478
+% @LO 0.00   9.65068677631984250809 99.9000000000
+% @LN 0.00   9.77824208725781751639 99.9000000000
+% Resuming node 4 at   9.77824208725781751639
+ % @PAP adding 26 rows, 95 nz to LP
+  % @PL 26 rows, 24 cols, 119 nonzeros, 7 slack, 19 tight.
+  % @PAP adding 2 rows, 6 nz to LP
+  % @PL 28 rows, 24 cols, 125 nonzeros, 8 slack, 20 tight.
+  % @D deleting 8 slack rows
+  % Node 4 LP 1 Solution, length = 9780063.803407, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.000000 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.135013 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.540051 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.000000 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.135013 (FST 4)
+  % DEBUG LP_VARS: x[5] = 1.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.540051 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.000000 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.135013 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.459949 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.000000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.459949 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.459949 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.864987 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.864987 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 0.000000 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 0.000000 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 0.459949 (terminal 9)
+ % 6 fractional variables
+ % @LO 0.00   9.77824208725781751639 99.9000000000
+ % @LN 0.00   9.78006380340735503864 99.9000000000
+ %   Final iteration: 0.00/0.00/0.00/0.00/0.00/0.00/0.00
+
+  %  Carefully choosing branching variable, nfrac = 6
+  % Initial guess is x4, Z0 = 9780063.80340735        , Z1 = 10260858.1195278        
+
+  % 	x10 = 1,	Z1 = 9782202.77983001        
+  % 	x10 = 0,	Z0 = 10187636.6423113        
+  %   New best:  x10, Z = 9782202.77983001        
+  % 	x4 = 1,	Z1 = 11054735.3032206        
+  % 	x4 = 0,	Z0 = 9880894.65097244        
+  %   New best:  x4, Z = 9880894.65097244        
+  % 	x2 = 1,	Z1 = 1.79769313486232e+308   
+   % @PL 20 rows, 24 cols, 99 nonzeros, 1 slack, 19 tight.
+   % @D deleting 1 slack rows
+   % @PAP adding 2 rows, 6 nz to LP
+   % @PL 21 rows, 24 cols, 103 nonzeros, 2 slack, 19 tight.
+   % @D deleting 2 slack rows
+   % @PAP adding 4 rows, 11 nz to LP
+   % @PL 23 rows, 24 cols, 108 nonzeros, 0 slack, 23 tight.
+ % suspending node 4 at  10.12927223625559491893
+% @LO 0.00   9.78006380340735503864 99.9000000000
+% @LN 0.00  10.08720259989308587478 99.9000000000
+% Resuming node 3 at  10.08720259989308587478
+ % @PAP adding 22 rows, 82 nz to LP
+  % 	Constraint pool unchanged, skip LP solve.
+  % Node 3 LP 2 Solution, length = 10087202.599893, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.000000 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.287206 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.046127 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.953873 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.287206 (FST 4)
+  % DEBUG LP_VARS: x[5] = 0.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.287206 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.000000 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.287206 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.000000 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.000000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.712794 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.712794 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.712794 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.712794 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 0.046127 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 0.046127 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 0.046127 (terminal 9)
+ % 6 fractional variables
+ %   Final iteration: 0.00/0.00/0.00/0.00/0.00/0.00/0.00
+
+  %  Carefully choosing branching variable, nfrac = 6
+  % Initial guess is x4, Z0 = 10087202.5998931        , Z1 = 10260858.1195278        
+
+  % 	x3 = 1,	Z1 = 10114417.0340372        
+  % 	x3 = 0,	Z0 = 10483241.1259453        
+  %   New best:  x3, Z = 10114417.0340372        
+  % 	x4 = 1,	Z1 = 11673744.9406315        
+  % 	x4 = 0,	Z0 = 10156638.095582         
+  %   New best:  x4, Z = 10156638.095582         
+  % 	x2 = 0,	Z0 = 10104525.6537325        
+  % 	x9 = 0,	Z0 = 10114688.3294657        
+  % 	x1 = 0,	Z0 = 10171223.5194964        
+  % 	x1 = 1,	Z1 = 10779258.1168195        
+  %   New best:  x1, Z = 10171223.5194964        
+  % 	x6 = 0,	Z0 = 10188149.2329573        
+  % 	x6 = 1,	Z1 = 10103039.917169         
+  % Best branch is x1, Z0 = 10171223.5194964        , Z1 = 10779258.1168195        
+
+ % @NC    5    3	x1 = 0	10171223.519496
+ % @NC    6    3	x1 = 1	10779258.116820
+ %       3     4 10087202.5999               10129272.2363    x5 D     1     2
+% @LO 0.00  10.08720259989308587478 99.9000000000
+% @LN 0.00  10.12927223625559491893 99.9000000000
+% Resuming node 4 at  10.12927223625559491893
+ % @PAP adding 23 rows, 84 nz to LP
+  % 	Constraint pool unchanged, skip LP solve.
+  % Node 4 LP 2 Solution, length = 10129272.236256, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.000000 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.269580 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.000000 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.000000 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.269580 (FST 4)
+  % DEBUG LP_VARS: x[5] = 1.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.269580 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.191260 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.269580 (FST 9)
+  % DEBUG LP_VARS: x[10] = 1.000000 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.000000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.730420 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.730420 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.730420 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.730420 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 0.000000 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 0.000000 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 0.000000 (terminal 9)
+ % 5 fractional variables
+ % @cutset: 2 connected components.
+ %   Final iteration: 0.00/0.00/0.00/0.00/0.00/0.00/0.00
+
+  %  Carefully choosing branching variable, nfrac = 5
+  % Initial guess is x4, Z0 = 10129272.2362556        , Z1 = 11054735.3032206        
+
+  % 	x7 = 1,	Z1 = 10258855.8977687        
+  % 	x7 = 0,	Z0 = 10134007.886242         
+  %   New best:  x7, Z = 10134007.886242         
+  % 	x4 = 1,	Z1 = 1.79769313486232e+308   
+   % @PL 23 rows, 24 cols, 108 nonzeros, 4 slack, 19 tight.
+   % @D deleting 4 slack rows
+   % @PAP adding 2 rows, 4 nz to LP
+   % @PL 21 rows, 24 cols, 101 nonzeros, 0 slack, 21 tight.
+   % @PAP adding 2 rows, 4 nz to LP
+   % @PL 23 rows, 24 cols, 105 nonzeros, 1 slack, 22 tight.
+   % @D deleting 1 slack rows
+ % suspending node 4 at  10.40885465990346858689
+% @LO 0.00  10.12927223625559491893 99.9000000000
+% @LN 0.00  10.17122351949640446378 99.9000000000
+% Resuming node 5 at  10.17122351949640446378
+ % @PAP adding 22 rows, 82 nz to LP
+  % @PL 22 rows, 24 cols, 106 nonzeros, 6 slack, 16 tight.
+  % @PAP adding 2 rows, 4 nz to LP
+  % @PL 24 rows, 24 cols, 110 nonzeros, 6 slack, 18 tight.
+  % @D deleting 6 slack rows
+  % Node 5 LP 1 Solution, length = 10177722.431924, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.000000 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.000000 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.500000 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.500000 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.209417 (FST 4)
+  % DEBUG LP_VARS: x[5] = 0.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.918835 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.000000 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.209417 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.000000 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.000000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.081165 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.081165 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.790583 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.790583 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 0.500000 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 0.500000 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 0.500000 (terminal 9)
+ % 5 fractional variables
+ % @LO 0.00  10.17122351949640446378 99.9000000000
+ % @LN 0.00  10.17772243192440662085 99.9000000000
+ %   Final iteration: 0.00/0.00/0.00/0.00/0.00/0.00/0.00
+
+  %  Carefully choosing branching variable, nfrac = 5
+  % Initial guess is x4, Z0 = 10177722.4319244        , Z1 = 11673744.9406315        
+
+  % 	x2 = 1,	Z1 = 10815495.44646          
+  % 	x2 = 0,	Z0 = 10260457.9568038        
+  %   New best:  x2, Z = 10260457.9568038        
+  % 	x3 = 1,	Z1 = 10260457.9568038        
+  % 	x3 = 0,	Z0 = 10686597.3591874        
+  % 	x4 = 1,	Z1 = 11673744.9406315        
+  % 	x4 = 0,	Z0 = 10255434.3050321        
+  % 	x9 = 0,	Z0 = 10226547.9940678        
+  % 	x6 = 1,	Z1 = 10188674.6769863        
+  % Best branch is x2, Z0 = 10260457.9568038        , Z1 = 10815495.44646          
+
+ % @NC    7    5	x2 = 0	10260457.956804
+ % @NC    8    5	x2 = 1	10815495.446460
+ %       5     5 10177722.4319               10260457.9568    x1 D     3     3
+% @LO 0.00  10.17772243192440662085 99.9000000000
+% @LN 0.00  10.26045795680378525105 99.9000000000
+% Resuming node 7 at  10.26045795680378525105
+ % @PAP adding 18 rows, 71 nz to LP
+  % @PL 18 rows, 24 cols, 95 nonzeros, 2 slack, 16 tight.
+  % @PAP adding 3 rows, 9 nz to LP
+  % @PL 21 rows, 24 cols, 104 nonzeros, 3 slack, 18 tight.
+  % @D deleting 3 slack rows
+  % @PAP adding 2 rows, 4 nz to LP
+  % @PL 20 rows, 24 cols, 99 nonzeros, 0 slack, 20 tight.
+  % Node 7 LP 1 Solution, length = 10297418.301508, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.268821 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.000000 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.000000 (FST 2)
+  % DEBUG LP_VARS: x[3] = 1.000000 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.268821 (FST 4)
+  % DEBUG LP_VARS: x[5] = 0.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.268821 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.193537 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.268821 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.000000 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.000000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.731179 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.731179 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.731179 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.731179 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 0.000000 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 0.000000 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 0.000000 (terminal 9)
+ % 5 fractional variables
+ % @LO 0.00  10.26045795680378525105 99.9000000000
+ % @LN 0.00  10.29741830150813086675 99.9000000000
+ % @cutset: 2 connected components.
+ %   Final iteration: 0.00/0.00/0.00/0.00/0.00/0.00/0.00
+
+  %  Carefully choosing branching variable, nfrac = 5
+  % Initial guess is x4, Z0 = 10297418.3015081        , Z1 = 11673744.9406315        
+
+  % 	x7 = 1,	Z1 = 10322950.5479675        
+  % 	x7 = 0,	Z0 = 10304532.4033845        
+  %   New best:  x7, Z = 10304532.4033845        
+  % 	x0 = 1,	Z1 = 11182578.8959795        
+  % 	x0 = 0,	Z0 = 10302800.0332131        
+  % 	x4 = 1,	Z1 = 11673744.9406315        
+  % 	x4 = 0,	Z0 = 10526466.6559803        
+  %   New best:  x4, Z = 10526466.6559803        
+  % 	x9 = 0,	Z0 = 10370032.4237156        
+  % 	x6 = 1,	Z1 = 10419636.0760947        
+  % Best branch is x4, Z0 = 10526466.6559803        , Z1 = 11673744.9406315        
+
+ % @NC    9    7	x4 = 0	10526466.655980
+ % @NC   10    7	x4 = 1	11673744.940631
+ %       7     6 10297418.3015               10408854.6599    x2 D     5     4
+% @LO 0.00  10.29741830150813086675 99.9000000000
+% @LN 0.00  10.40885465990346858689 99.9000000000
+% Resuming node 4 at  10.40885465990346858689
+ % @PAP adding 22 rows, 78 nz to LP
+  % 	Constraint pool unchanged, skip LP solve.
+  % Node 4 LP 3 Solution, length = 10408854.659903, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.333333 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.333333 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.000000 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.000000 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.000000 (FST 4)
+  % DEBUG LP_VARS: x[5] = 1.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.333333 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.333333 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.333333 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.849876 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.000000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.666667 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.666667 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.666667 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.666667 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 0.000000 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 0.000000 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 0.150124 (terminal 9)
+ % 6 fractional variables
+ % @cutset: 2 connected components.
+ %   Final iteration: 0.00/0.00/0.00/0.00/0.00/0.00/0.00
+
+  %  Carefully choosing branching variable, nfrac = 6
+  % Initial guess is x0, Z0 = 10408854.6599035        , Z1 = 10418075.2332607        
+
+  % 	x9 = 0,	Z0 = 10795145.6059031        
+  % 	x9 = 1,	Z1 = 1.79769313486232e+308   
+   % @PL 22 rows, 24 cols, 102 nonzeros, 2 slack, 20 tight.
+   % @D deleting 2 slack rows
+   % @PAP adding 1 rows, 2 nz to LP
+   % @PL 21 rows, 24 cols, 100 nonzeros, 0 slack, 21 tight.
+ % suspending node 4 at  10.79733734471809469824
+% @LO 0.00  10.40885465990346858689 99.9000000000
+% @LN 0.00  10.52646665598027020394 99.9000000000
+% Resuming node 9 at  10.52646665598027020394
+ % @PAP adding 20 rows, 75 nz to LP
+  % @PL 20 rows, 24 cols, 99 nonzeros, 3 slack, 17 tight.
+  % @PAP adding 4 rows, 14 nz to LP
+  % @PL 24 rows, 24 cols, 113 nonzeros, 5 slack, 19 tight.
+  % @D deleting 5 slack rows
+  % Node 9 LP 1 Solution, length = 10663119.344411, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.464959 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.000000 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.000000 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.732479 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.000000 (FST 4)
+  % DEBUG LP_VARS: x[5] = 0.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.464959 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.464959 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.464959 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.267521 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.000000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.535041 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.535041 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.535041 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.535041 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 0.267521 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 0.267521 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 0.267521 (terminal 9)
+ % 6 fractional variables
+ % suspending node 9 at  10.66311934441149311681
+% @LO 0.00  10.52646665598027020394 99.9000000000
+% @LN 0.00  10.61531362175118964331 99.9000000000
+% Resuming node 2 at  10.61531362175118964331
+ % @PAP adding 26 rows, 92 nz to LP
+  % 	Constraint pool unchanged, skip LP solve.
+  % Node 2 LP 2 Solution, length = 10615313.621751, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.142857 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.142857 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.000000 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.000000 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.142857 (FST 4)
+  % DEBUG LP_VARS: x[5] = 1.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.482986 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.142857 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.142857 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.000000 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.000000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 1.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.517014 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.000000 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.857143 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.857143 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 0.000000 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 0.000000 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 1.000000 (terminal 9)
+ % 6 fractional variables
+ %   Final iteration: 0.00/0.00/0.00/0.00/0.00/0.00/0.00
+
+  %  Carefully choosing branching variable, nfrac = 6
+  % Initial guess is x4, Z0 = 10615313.6217512        , Z1 = 11865592.4470814        
+
+  % 	x7 = 0,	Z0 = 10639815.0978303        
+  % 	x7 = 1,	Z1 = 1.79769313486232e+308   
+   % @PL 26 rows, 24 cols, 116 nonzeros, 3 slack, 23 tight.
+   % @D deleting 3 slack rows
+ % suspending node 2 at  10.63981509783032564087
+% @LO 0.00  10.61531362175118964331 99.9000000000
+% @LN 0.00  10.63981509783032564087 99.9000000000
+% Resuming node 2 at  10.63981509783032564087
+ % @PAP adding 23 rows, 82 nz to LP
+  % 	Constraint pool unchanged, skip LP solve.
+  % Node 2 LP 3 Solution, length = 10639815.097830, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.166667 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.166667 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.000000 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.000000 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.166667 (FST 4)
+  % DEBUG LP_VARS: x[5] = 1.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.357251 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.000000 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.166667 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.000000 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.000000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 1.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.642749 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.000000 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.833333 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.833333 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 0.000000 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 0.000000 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 1.000000 (terminal 9)
+ % 5 fractional variables
+ %   Final iteration: 0.00/0.00/0.00/0.00/0.00/0.00/0.00
+
+  %  Carefully choosing branching variable, nfrac = 5
+  % Initial guess is x4, Z0 = 10639815.0978303        , Z1 = 11865592.4470814        
+
+  % 	x4 = 1,	Z1 = 1.79769313486232e+308   
+   % @PL 23 rows, 24 cols, 106 nonzeros, 2 slack, 21 tight.
+   % @D deleting 2 slack rows
+   % @PAP adding 3 rows, 9 nz to LP
+   % @PL 24 rows, 24 cols, 111 nonzeros, 1 slack, 23 tight.
+   % @D deleting 1 slack rows
+   % @PAP adding 1 rows, 2 nz to LP
+   % @PL 24 rows, 24 cols, 108 nonzeros, 1 slack, 23 tight.
+   % @D deleting 1 slack rows
+ % suspending node 2 at  11.30085191786805332015
+% @LO 0.00  10.63981509783032564087 99.9000000000
+% @LN 0.00  10.66311934441149311681 99.9000000000
+% Resuming node 9 at  10.66311934441149311681
+ % @PAP adding 19 rows, 73 nz to LP
+  % 	Constraint pool unchanged, skip LP solve.
+  % Node 9 LP 2 Solution, length = 10663119.344411, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.464959 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.000000 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.000000 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.732479 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.000000 (FST 4)
+  % DEBUG LP_VARS: x[5] = 0.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.464959 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.464959 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.464959 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.267521 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.000000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.535041 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.535041 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.535041 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.535041 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 0.267521 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 0.267521 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 0.267521 (terminal 9)
+ % 6 fractional variables
+ % @cutset: 2 connected components.
+ %   Final iteration: 0.00/0.00/0.00/0.00/0.00/0.00/0.00
+
+  %  Carefully choosing branching variable, nfrac = 6
+  % Initial guess is x0, Z0 = 10663119.3444115        , Z1 = 11182578.8959795        
+
+  % 	x3 = 1,	Z1 = 11136790.1365179        
+  % 	x3 = 0,	Z0 = 11006109.8669942        
+  %   New best:  x3, Z = 11006109.8669942        
+  % 	x0 = 1,	Z1 = 11206427.6113123        
+  % 	x0 = 0,	Z0 = 11057702.8239698        
+  %   New best:  x0, Z = 11057702.8239698        
+  % 	x9 = 0,	Z0 = 10953229.8074296        
+  % 	x10 = 0,	Z0 = 11136790.1365179        
+  % 	x10 = 1,	Z1 = 11006109.8669942        
+  % 	x6 = 0,	Z0 = 10894550.3993796        
+  % 	x7 = 1,	Z1 = 11164944.1696611        
+  % 	x7 = 0,	Z0 = 10781872.5223948        
+  % Best branch is x0, Z0 = 11057702.8239698        , Z1 = 11206427.6113123        
+
+ % @NC   11    9	x0 = 0	11057702.823970
+ % @NC   12    9	x0 = 1	11206427.611312
+ %       9     7 10663119.3444               10779258.1168    x4 D     7     5
+% @LO 0.01  10.66311934441149311681 99.9000000000
+% @LN 0.01  10.77925811681950207799 99.9000000000
+% Resuming node 6 at  10.77925811681950207799
+ % @PAP adding 22 rows, 82 nz to LP
+  % @PL 22 rows, 24 cols, 106 nonzeros, 7 slack, 15 tight.
+  % @D deleting 7 slack rows
+  % @PAP adding 4 rows, 14 nz to LP
+  % @PL 19 rows, 24 cols, 103 nonzeros, 3 slack, 16 tight.
+  % @D deleting 3 slack rows
+  % @PAP adding 5 rows, 14 nz to LP
+  % @PL 21 rows, 24 cols, 110 nonzeros, 3 slack, 18 tight.
+  % @D deleting 3 slack rows
+  % @PAP adding 3 rows, 7 nz to LP
+  % @PL 21 rows, 24 cols, 107 nonzeros, 3 slack, 18 tight.
+  % @D deleting 3 slack rows
+  % @PAP adding 3 rows, 10 nz to LP
+  % @PL 21 rows, 24 cols, 109 nonzeros, 1 slack, 20 tight.
+  % @D deleting 1 slack rows
+  % Node 6 LP 1 Solution, length = 12201829.992248, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.000000 (FST 0)
+  % DEBUG LP_VARS: x[1] = 1.000000 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.132824 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.132824 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.000000 (FST 4)
+  % DEBUG LP_VARS: x[5] = 0.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.132824 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.000000 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.000000 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.132824 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.734352 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.000000 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.867176 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.000000 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.000000 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 0.867176 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 0.867176 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 0.867176 (terminal 9)
+ % 5 fractional variables
+ % suspending node 6 at  12.20182999224786790649
+% @LO 0.01  10.77925811681950207799 99.9000000000
+% @LN 0.01  10.79733734471809469824 99.9000000000
+% Resuming node 4 at  10.79733734471809469824
+ % @PAP adding 21 rows, 76 nz to LP
+  % 	Constraint pool unchanged, skip LP solve.
+  % Node 4 LP 4 Solution, length = 10797337.344718, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.333333 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.333333 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.000000 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.000000 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.000000 (FST 4)
+  % DEBUG LP_VARS: x[5] = 1.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.333333 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.333333 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.000000 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.829110 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.333333 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.666667 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.666667 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.666667 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.666667 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 0.000000 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 0.000000 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 0.170890 (terminal 9)
+ % 6 fractional variables
+ % @cutset: 2 connected components.
+ %   Final iteration: 0.00/0.00/0.00/0.00/0.00/0.00/0.00
+
+  %  Carefully choosing branching variable, nfrac = 6
+  % Initial guess is x11, Z0 = 10797337.3447181        , Z1 = 11197602.0400048        
+
+  % 	x1 = 0,	Z0 = 11188087.2534694        
+  % 	x1 = 1,	Z1 = 1.79769313486232e+308   
+   % @PL 21 rows, 24 cols, 100 nonzeros, 2 slack, 19 tight.
+   % @D deleting 2 slack rows
+ % suspending node 4 at  11.18808725346935339928
+% @LO 0.01  10.79733734471809469824 99.9000000000
+% @LN 0.01  10.81549544646001237425 99.9000000000
+% Resuming node 8 at  10.81549544646001237425
+ % @PAP adding 18 rows, 71 nz to LP
+  % @PL 18 rows, 24 cols, 95 nonzeros, 2 slack, 16 tight.
+  % @D deleting 2 slack rows
+  % @PAP adding 2 rows, 6 nz to LP
+  % @PL 18 rows, 24 cols, 97 nonzeros, 2 slack, 16 tight.
+  % @D deleting 2 slack rows
+  % @PAP adding 4 rows, 16 nz to LP
+  % @PL 20 rows, 24 cols, 107 nonzeros, 3 slack, 17 tight.
+  % Node 8 LP 1 Solution, length = 999999999999999983222784.000000, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.000000 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.000000 (FST 1)
+  % DEBUG LP_VARS: x[2] = 1.000000 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.000000 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.000000 (FST 4)
+  % DEBUG LP_VARS: x[5] = 0.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.237446 (FST 6)
+  % DEBUG LP_VARS: x[7] = 1.000000 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.000000 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.000000 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.000000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.762554 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.000000 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 1.000000 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 1.000000 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 0.000000 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 1.000000 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 0.000000 (terminal 9)
+ %       8     6    infeasible               11057702.8240    x2 U     5     4
+% @LO 0.01  10.81549544646001237425 99.9000000000
+% @LN 0.01  11.05770282396978387851 99.9000000000
+% Resuming node 11 at  11.05770282396978387851
+ % @PAP adding 19 rows, 73 nz to LP
+  % @PL 19 rows, 24 cols, 97 nonzeros, 4 slack, 15 tight.
+  % @PAP adding 4 rows, 14 nz to LP
+  % @PL 23 rows, 24 cols, 111 nonzeros, 4 slack, 19 tight.
+  % @D deleting 4 slack rows
+  % @PAP adding 2 rows, 8 nz to LP
+  % @PL 21 rows, 24 cols, 105 nonzeros, 2 slack, 19 tight.
+  % @D deleting 2 slack rows
+  % Node 11 LP 1 Solution, length = 11310314.678335, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.000000 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.000000 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.000000 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.500000 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.000000 (FST 4)
+  % DEBUG LP_VARS: x[5] = 0.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.590106 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.590106 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.590106 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.500000 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.590106 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.409894 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.409894 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.409894 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.409894 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 0.500000 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 0.500000 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 0.500000 (terminal 9)
+ % 6 fractional variables
+ % suspending node 11 at  11.31031467833513204369
+% @LO 0.01  11.05770282396978387851 99.9000000000
+% @LN 0.01  11.18808725346935339928 99.9000000000
+% Resuming node 4 at  11.18808725346935339928
+ % @PAP adding 19 rows, 72 nz to LP
+  % 	Constraint pool unchanged, skip LP solve.
+  % Node 4 LP 5 Solution, length = 11188087.253469, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.500000 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.000000 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.000000 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.000000 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.000000 (FST 4)
+  % DEBUG LP_VARS: x[5] = 1.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.000000 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.500000 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.000000 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.990277 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.500000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 1.000000 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 1.000000 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.500000 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.500000 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 0.000000 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 0.000000 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 0.009723 (terminal 9)
+ % 4 fractional variables
+ % @cutset: 2 connected components.
+ %   Final iteration: 0.00/0.00/0.00/0.00/0.00/0.00/0.00
+
+  %  Carefully choosing branching variable, nfrac = 4
+  % Initial guess is x11, Z0 = 11188087.2534694        , Z1 = 11197602.0400048        
+
+  % 	x0 = 0,	Z0 = 1.79769313486232e+308   
+   % @PL 19 rows, 24 cols, 96 nonzeros, 1 slack, 18 tight.
+   % @D deleting 1 slack rows
+   % @PAP adding 1 rows, 4 nz to LP
+   % @PL 19 rows, 24 cols, 98 nonzeros, 3 slack, 16 tight.
+ % suspending node 4 at 1000000000000000000.00000000000000000000
+% @LO 0.01  11.18808725346935339928 99.9000000000
+% @LN 0.01  11.20642761131233378080 99.9000000000
+% Resuming node 12 at  11.20642761131233378080
+ % @PAP adding 19 rows, 73 nz to LP
+  % @PL 19 rows, 24 cols, 97 nonzeros, 3 slack, 16 tight.
+  % Node 12 LP 1 Solution, length = 11206427.611312, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 1.000000 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.000000 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.000000 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.500000 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.000000 (FST 4)
+  % DEBUG LP_VARS: x[5] = 0.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.129336 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.000000 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.129336 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.500000 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.000000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.870664 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.870664 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.000000 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.000000 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 0.500000 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 0.500000 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 0.500000 (terminal 9)
+ % 4 fractional variables
+ % @cutset: 2 connected components.
+ %   Final iteration: 0.00/0.00/0.00/0.00/0.00/0.00/0.00
+
+  %  Carefully choosing branching variable, nfrac = 4
+  % Initial guess is x10, Z0 = 11206427.6113123        , Z1 = 11206427.6113123        
+
+  % 	x10 = 0,	Z0 = 11546128.4057317        
+  % 	x10 = 1,	Z1 = 11487919.8461286        
+  %   New best:  x10, Z = 11487919.8461286        
+  % 	x3 = 1,	Z1 = 1.79769313486232e+308   
+   % @PL 19 rows, 24 cols, 97 nonzeros, 5 slack, 14 tight.
+   % @D deleting 5 slack rows
+   % @PAP adding 4 rows, 14 nz to LP
+   % @PL 18 rows, 24 cols, 100 nonzeros, 4 slack, 14 tight.
+   % @D deleting 4 slack rows
+   % @PAP adding 2 rows, 7 nz to LP
+   % @PL 16 rows, 24 cols, 93 nonzeros, 1 slack, 15 tight.
+   % @D deleting 1 slack rows
+ % suspending node 12 at  12.19057641031666427978
+% @LO 0.01  11.20642761131233378080 99.9000000000
+% @LN 0.01  11.30085191786805332015 99.9000000000
+% Resuming node 2 at  11.30085191786805332015
+ % @PAP adding 23 rows, 82 nz to LP
+  % 	Constraint pool unchanged, skip LP solve.
+  % Node 2 LP 4 Solution, length = 11300851.917868, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.250000 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.250000 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.000000 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.000000 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.000000 (FST 4)
+  % DEBUG LP_VARS: x[5] = 0.707549 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.250000 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.000000 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.250000 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.000000 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.250000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 1.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.750000 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.000000 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.750000 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.750000 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 0.000000 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 0.292451 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 1.000000 (terminal 9)
+ % 6 fractional variables
+ %   Final iteration: 0.00/0.00/0.00/0.00/0.00/0.00/0.00
+
+  %  Carefully choosing branching variable, nfrac = 6
+  % Initial guess is x11, Z0 = 11300851.9178681        , Z1 = 11564687.5834704        
+
+  % 	x0 = 1,	Z1 = 1.79769313486232e+308   
+   % @PL 23 rows, 24 cols, 106 nonzeros, 0 slack, 23 tight.
+ % suspending node 2 at 1000000000000000000.00000000000000000000
+% @LO 0.01  11.30085191786805332015 99.9000000000
+% @LN 0.01  11.31031467833513204369 99.9000000000
+% Resuming node 11 at  11.31031467833513204369
+ % @PAP adding 19 rows, 73 nz to LP
+  % 	Constraint pool unchanged, skip LP solve.
+  % Node 11 LP 2 Solution, length = 11310314.678335, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.000000 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.000000 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.000000 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.500000 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.000000 (FST 4)
+  % DEBUG LP_VARS: x[5] = 0.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.590106 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.590106 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.590106 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.500000 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.590106 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.409894 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.409894 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.409894 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.409894 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 0.500000 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 0.500000 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 0.500000 (terminal 9)
+ % 6 fractional variables
+ % @cutset: 2 connected components.
+ %   Final iteration: 0.00/0.00/0.00/0.00/0.00/0.00/0.00
+
+  %  Carefully choosing branching variable, nfrac = 6
+  % Initial guess is x6, Z0 = 11495008.5584285        , Z1 = 11310314.6783351        
+
+  % 	x10 = 1,	Z1 = 12854662.8081479        
+  % 	x10 = 0,	Z0 = 11619330.2626644        
+  %   New best:  x10, Z = 11619330.2626644        
+  % 	x3 = 0,	Z0 = 12854662.8081478        
+  % 	x3 = 1,	Z1 = 11619330.2626644        
+  % 	x11 = 1,	Z1 = 11618601.6115837        
+  % 	x9 = 1,	Z1 = 13033061.8976726        
+  % 	x9 = 0,	Z0 = 11505541.277416         
+  % 	x6 = 1,	Z1 = 12107654.0839034        
+  % 	x6 = 0,	Z0 = 11505541.277416         
+  % 	x7 = 1,	Z1 = 11363213.8881073        
+  % Best branch is x10, Z0 = 11619330.2626644        , Z1 = 12854662.8081479        
+
+ % @NC   13   11	x10 = 0	11619330.262664
+ % @NC   14   11	x10 = 1	12854662.808148
+ %      11     7 11310314.6783               11619330.2627    x0 D     9     6
+% @LO 0.01  11.31031467833513204369 99.9000000000
+% @LN 0.01  11.61933026266439661356 99.9000000000
+% Resuming node 13 at  11.61933026266439661356
+ % @PAP adding 19 rows, 73 nz to LP
+  % @PL 19 rows, 24 cols, 97 nonzeros, 4 slack, 15 tight.
+  % @D deleting 4 slack rows
+  % @PAP adding 2 rows, 8 nz to LP
+  % @PL 17 rows, 24 cols, 96 nonzeros, 2 slack, 15 tight.
+  % @D deleting 2 slack rows
+  % Node 13 LP 1 Solution, length = 13008044.649998, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.000000 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.000000 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.000000 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.000000 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.000000 (FST 4)
+  % DEBUG LP_VARS: x[5] = 0.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.959041 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.959041 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.959041 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.000000 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.959041 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.040959 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.040959 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.040959 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.040959 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 1.000000 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 1.000000 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 1.000000 (terminal 9)
+ % 4 fractional variables
+ % suspending node 13 at  13.00804464999836973504
+% @LO 0.01  11.61933026266439661356 99.9000000000
+% @LN 0.01  11.67374494063145284883 99.9000000000
+% Resuming node 10 at  11.67374494063145284883
+ % @PAP adding 20 rows, 75 nz to LP
+  % @PL 20 rows, 24 cols, 99 nonzeros, 6 slack, 14 tight.
+  % Node 10 LP 1 Solution, length = 11673744.940631, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.000000 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.000000 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.000000 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.181626 (FST 3)
+  % DEBUG LP_VARS: x[4] = 1.000000 (FST 4)
+  % DEBUG LP_VARS: x[5] = 0.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.000000 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.000000 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.000000 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.181626 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.000000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.000000 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 1.000000 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.000000 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.000000 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 0.818374 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 0.818374 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 0.818374 (terminal 9)
+ % 2 fractional variables
+ % @cutset: 2 connected components.
+ %   Final iteration: 0.00/0.00/0.00/0.00/0.00/0.00/0.00
+
+  %  Carefully choosing branching variable, nfrac = 2
+  % Initial guess is x10, Z0 = 11673744.9406315        , Z1 = 11673744.9406315        
+
+  % 	x10 = 0,	Z0 = 11802862.6248242        
+  % 	x10 = 1,	Z1 = 1.79769313486232e+308   
+   % @PL 20 rows, 24 cols, 99 nonzeros, 6 slack, 14 tight.
+   % @D deleting 6 slack rows
+ % suspending node 10 at  11.80286262482416681507
+% @LO 0.01  11.67374494063145284883 99.9000000000
+% @LN 0.01  11.80286262482416681507 99.9000000000
+% Resuming node 10 at  11.80286262482416681507
+ % @PAP adding 14 rows, 62 nz to LP
+  % 	Constraint pool unchanged, skip LP solve.
+  % Node 10 LP 2 Solution, length = 11802862.624824, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.000000 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.000000 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.000000 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.000000 (FST 3)
+  % DEBUG LP_VARS: x[4] = 1.000000 (FST 4)
+  % DEBUG LP_VARS: x[5] = 0.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.789890 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.000000 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.000000 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.000000 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.000000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.000000 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.210110 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.000000 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.000000 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 1.000000 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 1.000000 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 1.000000 (terminal 9)
+ % 1 fractional variables
+ %   Final iteration: 0.00/0.00/0.00/0.00/0.00/0.00/0.00
+
+  %  Carefully choosing branching variable, nfrac = 1
+  % Initial guess is x6, Z0 = 11802862.6248242        , Z1 = 11837207.768662         
+
+  % 	x6 = 1,	Z1 = 1.79769313486232e+308   
+   % @PL 14 rows, 24 cols, 86 nonzeros, 0 slack, 14 tight.
+   % @PAP adding 1 rows, 3 nz to LP
+   % @PL 15 rows, 24 cols, 89 nonzeros, 0 slack, 15 tight.
+   % @PAP adding 1 rows, 4 nz to LP
+   % @PL 16 rows, 24 cols, 93 nonzeros, 0 slack, 16 tight.
+   % @PAP adding 1 rows, 3 nz to LP
+   % @PL 17 rows, 24 cols, 96 nonzeros, 2 slack, 15 tight.
+   % @D deleting 2 slack rows
+ % suspending node 10 at  12.33239420758944682177
+% @LO 0.01  11.80286262482416681507 99.9000000000
+% @LN 0.01  12.19057641031666427978 99.9000000000
+% Resuming node 12 at  12.19057641031666427978
+ % @PAP adding 15 rows, 64 nz to LP
+  % 	Constraint pool unchanged, skip LP solve.
+  % Node 12 LP 2 Solution, length = 12190576.410317, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 1.000000 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.000000 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.000000 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.000000 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.000000 (FST 4)
+  % DEBUG LP_VARS: x[5] = 0.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.915188 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.000000 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.915188 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.000000 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.000000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.084812 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.084812 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.000000 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.000000 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 1.000000 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 1.000000 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 1.000000 (terminal 9)
+ % 2 fractional variables
+ %   Final iteration: 0.00/0.00/0.00/0.00/0.00/0.00/0.00
+
+  %  Carefully choosing branching variable, nfrac = 2
+  % Initial guess is x9, Z0 = 12190576.4103167        , Z1 = 12255978.2383819        
+
+  % 	x9 = 1,	Z1 = 12258428.0452322        
+  % 	x9 = 0,	Z0 = 12200335.6564351        
+  %   New best:  x9, Z = 12200335.6564351        
+  % 	x6 = 1,	Z1 = 12290364.6238873        
+  % 	x6 = 0,	Z0 = 12200335.6564351        
+  %   New best:  x6, Z = 12200335.6564351        
+  % Best branch is x6, Z0 = 12200335.6564351        , Z1 = 12290364.6238873        
+
+ % @NC   15   12	x6 = 0	12200335.656435
+ % @NC   16   12	x6 = 1	12290364.623887
+ %      12     8 12190576.4103               12200335.6564    x0 U     9     6
+% @LO 0.01  12.19057641031666427978 99.9000000000
+% @LN 0.01  12.20033565643512574184 99.9000000000
+% Resuming node 15 at  12.20033565643512574184
+ % @PAP adding 15 rows, 64 nz to LP
+  % @PL 15 rows, 24 cols, 88 nonzeros, 0 slack, 15 tight.
+  % @PAP adding 1 rows, 4 nz to LP
+  % @PL 16 rows, 24 cols, 92 nonzeros, 1 slack, 15 tight.
+  % @D deleting 1 slack rows
+  % @PAP adding 1 rows, 3 nz to LP
+  % @PL 16 rows, 24 cols, 93 nonzeros, 2 slack, 14 tight.
+  % @D deleting 2 slack rows
+  % Node 15 LP 1 Solution, length = 12771488.343614, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 1.000000 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.000000 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.000000 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.000000 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.000000 (FST 4)
+  % DEBUG LP_VARS: x[5] = 0.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.000000 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.000000 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.595851 (FST 8)
+  % DEBUG LP_VARS: x[9] = 1.000000 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.000000 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.000000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.000000 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 1.000000 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.000000 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.000000 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 0.404149 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 1.000000 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 1.000000 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 1.000000 (terminal 9)
+ % 1 fractional variables
+ % suspending node 15 at  12.77148834361399920567
+% @LO 0.01  12.20033565643512574184 99.9000000000
+% @LN 0.01  12.20182999224786790649 99.9000000000
+% Resuming node 6 at  12.20182999224786790649
+ % @PAP adding 20 rows, 79 nz to LP
+  % 	Constraint pool unchanged, skip LP solve.
+  % Node 6 LP 2 Solution, length = 12201829.992248, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.000000 (FST 0)
+  % DEBUG LP_VARS: x[1] = 1.000000 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.132824 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.132824 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.000000 (FST 4)
+  % DEBUG LP_VARS: x[5] = 0.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.132824 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.000000 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.000000 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.132824 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.734352 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.000000 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.867176 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.000000 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.000000 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 0.867176 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 0.867176 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 0.867176 (terminal 9)
+ % 5 fractional variables
+ %   Final iteration: 0.00/0.00/0.00/0.00/0.00/0.00/0.00
+
+  %  Carefully choosing branching variable, nfrac = 5
+  % Initial guess is x11, Z0 = 12201829.9922479        , Z1 = 12518267.9023985        
+
+  % 	x11 = 1,	Z1 = 12555548.3018828        
+  % 	x11 = 0,	Z0 = 1.79769313486232e+308   
+   % @PL 20 rows, 24 cols, 103 nonzeros, 3 slack, 17 tight.
+   % @D deleting 3 slack rows
+   % @PAP adding 1 rows, 2 nz to LP
+   % @PL 18 rows, 24 cols, 99 nonzeros, 1 slack, 17 tight.
+   % @D deleting 1 slack rows
+ % suspending node 6 at  12.59207363500849119475
+% @LO 0.01  12.20182999224786790649 99.9000000000
+% @LN 0.01  12.29036462388732253714 99.9000000000
+% Resuming node 16 at  12.29036462388732253714
+ % @PAP adding 15 rows, 64 nz to LP
+  % @PL 15 rows, 24 cols, 88 nonzeros, 1 slack, 14 tight.
+  % @D deleting 1 slack rows
+  % @PAP adding 1 rows, 4 nz to LP
+  % @PL 15 rows, 24 cols, 90 nonzeros, 2 slack, 13 tight.
+  % Node 16 LP 1 Solution, length = 999999999999999983222784.000000, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 1.000000 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.000000 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.000000 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.000000 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.000000 (FST 4)
+  % DEBUG LP_VARS: x[5] = 0.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 1.000000 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.450420 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.549580 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.000000 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.000000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.000000 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.000000 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.000000 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.000000 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 1.000000 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 1.000000 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 1.000000 (terminal 9)
+ %      16     7    infeasible               12332394.2076    x6 U    12     7
+% @LO 0.01  12.29036462388732253714 99.9000000000
+% @LN 0.01  12.33239420758944682177 99.9000000000
+% Resuming node 10 at  12.33239420758944682177
+ % @PAP adding 15 rows, 67 nz to LP
+  % 	Constraint pool unchanged, skip LP solve.
+  % Node 10 LP 3 Solution, length = 12332394.207589, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.000000 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.000000 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.000000 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.000000 (FST 3)
+  % DEBUG LP_VARS: x[4] = 1.000000 (FST 4)
+  % DEBUG LP_VARS: x[5] = 0.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.000000 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.000000 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.614981 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.000000 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.000000 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.000000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.000000 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 1.000000 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.000000 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.000000 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 0.385019 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 1.000000 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 1.000000 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 1.000000 (terminal 9)
+ % 1 fractional variables
+ %   Final iteration: 0.00/0.00/0.00/0.00/0.00/0.00/0.00
+
+  %  Carefully choosing branching variable, nfrac = 1
+  % Initial guess is x8, Z0 = 12332394.2075894        , Z1 = 12580641.4741886        
+
+  % 	x8 = 1,	Z1 = 1.79769313486232e+308   
+   % @PL 15 rows, 24 cols, 91 nonzeros, 0 slack, 15 tight.
+   % @PAP adding 2 rows, 5 nz to LP
+   % @PL 17 rows, 24 cols, 96 nonzeros, 1 slack, 16 tight.
+   % @D deleting 1 slack rows
+ % suspending node 10 at  12.35919504692955150915
+% @LO 0.01  12.33239420758944682177 99.9000000000
+% @LN 0.01  12.35919504692955150915 99.9000000000
+% Resuming node 10 at  12.35919504692955150915
+ % @PAP adding 16 rows, 58 nz to LP
+  % 	Constraint pool unchanged, skip LP solve.
+  % Node 10 LP 4 Solution, length = 12359195.046930, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.000000 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.000000 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.000000 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.000000 (FST 3)
+  % DEBUG LP_VARS: x[4] = 1.000000 (FST 4)
+  % DEBUG LP_VARS: x[5] = 0.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.000000 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.000000 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.000000 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.000000 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.000000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.000000 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 1.000000 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 1.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.000000 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.000000 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 1.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 1.000000 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 1.000000 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 1.000000 (terminal 9)
+ % 0 fractional variables
+ %  	=== 6 nodes cut off ===
+ % @UO 0.01   3.35919504692955150915 -267.9213286000
+ % @UN 0.01   3.35919504692955150915 -267.9213286000
+ % *    10     0  3359195.0469  3359195.0469                  x4 U     7     5
+
+ % Certificate of solution:
+ % @C	.1606704657889116	.1392797240736805
+ % @C	.2809336405926924	.0931619940734952
+%%Page: 1 1
+BeginPlot
+	Plot_Terminals
+ % fs4: 5 1 0 4
+	5 T	.1606704657889116	.1392797240736805	S
+	.1606704657889116	.1392797240736805	1 T	S
+	.1606704657889116	.1392797240736805	.2809336405926924	.0931619940734952	S
+	.2809336405926924	.0931619940734952	0 T	S
+	.2809336405926924	.0931619940734952	4 T	S
+  (Euclidean SMT:  10 points,  length = 3.359195046929551,  0.01 seconds)
+EndPlot
+
+% @0 Euclidean SMT
+% N M Nodes LPs P1CPU P2CPU TotCPU
+% @1 10 14 16 31 0.00 0.01 0.01
+% Z RootZ %Gap RootLPs RootCPU RedMST
+% @2 3.359195046929551 9472073.363585 -181.97450 1 0.00 -72.9240
+% InitPRows InitPNZ InitLPRows InitLPNZ
+% @3 55 184 47 188
+% RootPRows RootPNZ RootLPRows RootLPNZ
+% @4 55 184 26 119
+% FinalPRows FinalPNZ FinalLPRows FinalLPNZ
+% @5 55 184 16 82
+% SMTFSTs SMTAvgFSTSz SMTMaxFSTSz #2FSTs #3FSTs ... #10FSTS #>10FSTs
+% @6 1 4.000000 4 0 0 1 0 0 0 0 0 0 0

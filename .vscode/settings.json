@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "gsttypes.h": "c",
+        "geosteiner.h": "c"
+    }
+}

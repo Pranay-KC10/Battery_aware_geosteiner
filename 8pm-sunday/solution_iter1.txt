@@ -1,0 +1,1079 @@
+ % ./bb
+ % Args:
+DEBUG P1READ: Terminal 0 battery=38.30
+DEBUG P1READ: Terminal 1 battery=88.60
+DEBUG P1READ: Terminal 2 battery=77.70
+DEBUG P1READ: Terminal 3 battery=91.50
+DEBUG P1READ: Terminal 4 battery=79.30
+DEBUG P1READ: Terminal 5 battery=33.50
+DEBUG P1READ: Terminal 6 battery=38.60
+DEBUG P1READ: Terminal 7 battery=49.20
+DEBUG P1READ: Terminal 8 battery=64.90
+DEBUG P1READ: Terminal 9 battery=42.10
+DEBUG P1READ: Terminal 10 battery=36.20
+DEBUG P1READ: Terminal 11 battery=2.70
+DEBUG P1READ: Terminal 12 battery=69.00
+DEBUG P1READ: Terminal 13 battery=5.90
+DEBUG P1READ: Terminal 14 battery=76.30
+DEBUG P1READ: Terminal 15 battery=92.60
+DEBUG P1READ: Terminal 16 battery=54.00
+DEBUG P1READ: Terminal 17 battery=42.60
+DEBUG P1READ: Terminal 18 battery=17.20
+DEBUG P1READ: Terminal 19 battery=73.60
+DEBUG HG: num_verts=20, num_edges=40
+ % Phase 1: 0.00 seconds
+
+%%BeginSetup
+
+0 1 0 1 SetAxes
+
+20 DefineTerminals
+	.4588350000000000	.2373240000000000	DT
+	.1270640000000000	.3509960000000000	DT
+	.1544540000000000	.4808220000000000	DT
+	.9474030000000000	.1441120000000000	DT
+	.2867390000000000	.0565890000000000	DT
+	.1326890000000000	.1166050000000000	DT
+	.6273950000000000	.2122140000000000	DT
+	.0794880000000000	.7970990000000000	DT
+	.0327480000000000	.8803250000000000	DT
+	.3110550000000000	.8689670000000000	DT
+	.0916180000000000	.0221720000000000	DT
+	.3600710000000000	.6382240000000000	DT
+	.7197120000000000	.7181670000000000	DT
+	.4424420000000000	.1450340000000000	DT
+	.9983770000000000	.5729870000000000	DT
+	.9654920000000000	.1935700000000000	DT
+	.1600100000000000	.4187950000000000	DT
+	.2909450000000000	.9620800000000000	DT
+	.3330000000000000	.9414120000000000	DT
+	.9512590000000000	.5074670000000000	DT
+
+%%EndSetup
+
+DEBUG ALGO: num_verts=20 <= 8? NO, num_edges=40 <= 12? NO
+DEBUG ALGO: Forcing BRANCH-AND-CUT for multi-objective optimization (vertices=20 > 1)
+DEBUG SPANNING: Adding modified spanning constraint for budget mode
+DEBUG SPANNING: Added modified spanning constraint: Σ(|FST|-1)*x + Σnot_covered = 19
+DEBUG CONSTRAINT: Adding soft cutset constraints with not_covered variables
+DEBUG CONSTRAINT: Added constraint x[2] + not_covered[0] ≤ 1 for terminal 0
+DEBUG CONSTRAINT: Added constraint x[27] + not_covered[0] ≤ 1 for terminal 0
+DEBUG CONSTRAINT: Added constraint x[31] + not_covered[0] ≤ 1 for terminal 0
+DEBUG CONSTRAINT: Added constraint Σx[FSTs] + 3·not_covered[0] ≤ 3 for terminal 0
+DEBUG CONSTRAINT: Added constraint x[0] + not_covered[1] ≤ 1 for terminal 1
+DEBUG CONSTRAINT: Added constraint x[24] + not_covered[1] ≤ 1 for terminal 1
+DEBUG CONSTRAINT: Added constraint x[33] + not_covered[1] ≤ 1 for terminal 1
+DEBUG CONSTRAINT: Added constraint Σx[FSTs] + 3·not_covered[1] ≤ 3 for terminal 1
+DEBUG CONSTRAINT: Added constraint x[5] + not_covered[2] ≤ 1 for terminal 2
+DEBUG CONSTRAINT: Added constraint x[7] + not_covered[2] ≤ 1 for terminal 2
+DEBUG CONSTRAINT: Added constraint x[16] + not_covered[2] ≤ 1 for terminal 2
+DEBUG CONSTRAINT: Added constraint x[23] + not_covered[2] ≤ 1 for terminal 2
+DEBUG CONSTRAINT: Added constraint x[36] + not_covered[2] ≤ 1 for terminal 2
+DEBUG CONSTRAINT: Added constraint Σx[FSTs] + 5·not_covered[2] ≤ 5 for terminal 2
+DEBUG CONSTRAINT: Added constraint x[3] + not_covered[3] ≤ 1 for terminal 3
+DEBUG CONSTRAINT: Added constraint x[4] + not_covered[3] ≤ 1 for terminal 3
+DEBUG CONSTRAINT: Added constraint x[17] + not_covered[3] ≤ 1 for terminal 3
+DEBUG CONSTRAINT: Added constraint x[20] + not_covered[3] ≤ 1 for terminal 3
+DEBUG CONSTRAINT: Added constraint x[22] + not_covered[3] ≤ 1 for terminal 3
+DEBUG CONSTRAINT: Added constraint x[39] + not_covered[3] ≤ 1 for terminal 3
+DEBUG CONSTRAINT: Added constraint Σx[FSTs] + 6·not_covered[3] ≤ 6 for terminal 3
+DEBUG CONSTRAINT: Added constraint x[0] + not_covered[4] ≤ 1 for terminal 4
+DEBUG CONSTRAINT: Added constraint x[1] + not_covered[4] ≤ 1 for terminal 4
+DEBUG CONSTRAINT: Added constraint x[30] + not_covered[4] ≤ 1 for terminal 4
+DEBUG CONSTRAINT: Added constraint x[32] + not_covered[4] ≤ 1 for terminal 4
+DEBUG CONSTRAINT: Added constraint Σx[FSTs] + 4·not_covered[4] ≤ 4 for terminal 4
+DEBUG CONSTRAINT: Added constraint x[0] + not_covered[5] ≤ 1 for terminal 5
+DEBUG CONSTRAINT: Added constraint x[1] + not_covered[5] ≤ 1 for terminal 5
+DEBUG CONSTRAINT: Added constraint x[29] + not_covered[5] ≤ 1 for terminal 5
+DEBUG CONSTRAINT: Added constraint x[30] + not_covered[5] ≤ 1 for terminal 5
+DEBUG CONSTRAINT: Added constraint x[33] + not_covered[5] ≤ 1 for terminal 5
+DEBUG CONSTRAINT: Added constraint Σx[FSTs] + 5·not_covered[5] ≤ 5 for terminal 5
+DEBUG CONSTRAINT: Added constraint x[2] + not_covered[6] ≤ 1 for terminal 6
+DEBUG CONSTRAINT: Added constraint x[3] + not_covered[6] ≤ 1 for terminal 6
+DEBUG CONSTRAINT: Added constraint x[4] + not_covered[6] ≤ 1 for terminal 6
+DEBUG CONSTRAINT: Added constraint x[11] + not_covered[6] ≤ 1 for terminal 6
+DEBUG CONSTRAINT: Added constraint x[17] + not_covered[6] ≤ 1 for terminal 6
+DEBUG CONSTRAINT: Added constraint x[18] + not_covered[6] ≤ 1 for terminal 6
+DEBUG CONSTRAINT: Added constraint x[20] + not_covered[6] ≤ 1 for terminal 6
+DEBUG CONSTRAINT: Added constraint x[31] + not_covered[6] ≤ 1 for terminal 6
+DEBUG CONSTRAINT: Added constraint x[39] + not_covered[6] ≤ 1 for terminal 6
+DEBUG CONSTRAINT: Added constraint Σx[FSTs] + 9·not_covered[6] ≤ 9 for terminal 6
+DEBUG CONSTRAINT: Added constraint x[5] + not_covered[7] ≤ 1 for terminal 7
+DEBUG CONSTRAINT: Added constraint x[6] + not_covered[7] ≤ 1 for terminal 7
+DEBUG CONSTRAINT: Added constraint x[8] + not_covered[7] ≤ 1 for terminal 7
+DEBUG CONSTRAINT: Added constraint x[13] + not_covered[7] ≤ 1 for terminal 7
+DEBUG CONSTRAINT: Added constraint x[14] + not_covered[7] ≤ 1 for terminal 7
+DEBUG CONSTRAINT: Added constraint x[15] + not_covered[7] ≤ 1 for terminal 7
+DEBUG CONSTRAINT: Added constraint x[16] + not_covered[7] ≤ 1 for terminal 7
+DEBUG CONSTRAINT: Added constraint x[19] + not_covered[7] ≤ 1 for terminal 7
+DEBUG CONSTRAINT: Added constraint x[28] + not_covered[7] ≤ 1 for terminal 7
+DEBUG CONSTRAINT: Added constraint x[35] + not_covered[7] ≤ 1 for terminal 7
+DEBUG CONSTRAINT: Added constraint Σx[FSTs] + 10·not_covered[7] ≤ 10 for terminal 7
+DEBUG CONSTRAINT: Added constraint x[6] + not_covered[8] ≤ 1 for terminal 8
+DEBUG CONSTRAINT: Added constraint x[13] + not_covered[8] ≤ 1 for terminal 8
+DEBUG CONSTRAINT: Added constraint x[14] + not_covered[8] ≤ 1 for terminal 8
+DEBUG CONSTRAINT: Added constraint x[19] + not_covered[8] ≤ 1 for terminal 8
+DEBUG CONSTRAINT: Added constraint x[28] + not_covered[8] ≤ 1 for terminal 8
+DEBUG CONSTRAINT: Added constraint Σx[FSTs] + 5·not_covered[8] ≤ 5 for terminal 8
+DEBUG CONSTRAINT: Added constraint x[6] + not_covered[9] ≤ 1 for terminal 9
+DEBUG CONSTRAINT: Added constraint x[7] + not_covered[9] ≤ 1 for terminal 9
+DEBUG CONSTRAINT: Added constraint x[8] + not_covered[9] ≤ 1 for terminal 9
+DEBUG CONSTRAINT: Added constraint x[9] + not_covered[9] ≤ 1 for terminal 9
+DEBUG CONSTRAINT: Added constraint x[12] + not_covered[9] ≤ 1 for terminal 9
+DEBUG CONSTRAINT: Added constraint x[13] + not_covered[9] ≤ 1 for terminal 9
+DEBUG CONSTRAINT: Added constraint x[14] + not_covered[9] ≤ 1 for terminal 9
+DEBUG CONSTRAINT: Added constraint x[15] + not_covered[9] ≤ 1 for terminal 9
+DEBUG CONSTRAINT: Added constraint x[16] + not_covered[9] ≤ 1 for terminal 9
+DEBUG CONSTRAINT: Added constraint x[19] + not_covered[9] ≤ 1 for terminal 9
+DEBUG CONSTRAINT: Added constraint x[25] + not_covered[9] ≤ 1 for terminal 9
+DEBUG CONSTRAINT: Added constraint x[34] + not_covered[9] ≤ 1 for terminal 9
+DEBUG CONSTRAINT: Added constraint x[35] + not_covered[9] ≤ 1 for terminal 9
+DEBUG CONSTRAINT: Added constraint Σx[FSTs] + 13·not_covered[9] ≤ 13 for terminal 9
+DEBUG CONSTRAINT: Added constraint x[1] + not_covered[10] ≤ 1 for terminal 10
+DEBUG CONSTRAINT: Added constraint x[29] + not_covered[10] ≤ 1 for terminal 10
+DEBUG CONSTRAINT: Added constraint Σx[FSTs] + 2·not_covered[10] ≤ 2 for terminal 10
+DEBUG CONSTRAINT: Added constraint x[5] + not_covered[11] ≤ 1 for terminal 11
+DEBUG CONSTRAINT: Added constraint x[7] + not_covered[11] ≤ 1 for terminal 11
+DEBUG CONSTRAINT: Added constraint x[8] + not_covered[11] ≤ 1 for terminal 11
+DEBUG CONSTRAINT: Added constraint x[9] + not_covered[11] ≤ 1 for terminal 11
+DEBUG CONSTRAINT: Added constraint x[13] + not_covered[11] ≤ 1 for terminal 11
+DEBUG CONSTRAINT: Added constraint x[16] + not_covered[11] ≤ 1 for terminal 11
+DEBUG CONSTRAINT: Added constraint x[34] + not_covered[11] ≤ 1 for terminal 11
+DEBUG CONSTRAINT: Added constraint x[36] + not_covered[11] ≤ 1 for terminal 11
+DEBUG CONSTRAINT: Added constraint Σx[FSTs] + 8·not_covered[11] ≤ 8 for terminal 11
+DEBUG CONSTRAINT: Added constraint x[9] + not_covered[12] ≤ 1 for terminal 12
+DEBUG CONSTRAINT: Added constraint x[10] + not_covered[12] ≤ 1 for terminal 12
+DEBUG CONSTRAINT: Added constraint x[18] + not_covered[12] ≤ 1 for terminal 12
+DEBUG CONSTRAINT: Added constraint x[20] + not_covered[12] ≤ 1 for terminal 12
+DEBUG CONSTRAINT: Added constraint x[37] + not_covered[12] ≤ 1 for terminal 12
+DEBUG CONSTRAINT: Added constraint Σx[FSTs] + 5·not_covered[12] ≤ 5 for terminal 12
+DEBUG CONSTRAINT: Added constraint x[2] + not_covered[13] ≤ 1 for terminal 13
+DEBUG CONSTRAINT: Added constraint x[27] + not_covered[13] ≤ 1 for terminal 13
+DEBUG CONSTRAINT: Added constraint x[32] + not_covered[13] ≤ 1 for terminal 13
+DEBUG CONSTRAINT: Added constraint Σx[FSTs] + 3·not_covered[13] ≤ 3 for terminal 13
+DEBUG CONSTRAINT: Added constraint x[10] + not_covered[14] ≤ 1 for terminal 14
+DEBUG CONSTRAINT: Added constraint x[26] + not_covered[14] ≤ 1 for terminal 14
+DEBUG CONSTRAINT: Added constraint Σx[FSTs] + 2·not_covered[14] ≤ 2 for terminal 14
+DEBUG CONSTRAINT: Added constraint x[3] + not_covered[15] ≤ 1 for terminal 15
+DEBUG CONSTRAINT: Added constraint x[11] + not_covered[15] ≤ 1 for terminal 15
+DEBUG CONSTRAINT: Added constraint x[17] + not_covered[15] ≤ 1 for terminal 15
+DEBUG CONSTRAINT: Added constraint x[18] + not_covered[15] ≤ 1 for terminal 15
+DEBUG CONSTRAINT: Added constraint x[20] + not_covered[15] ≤ 1 for terminal 15
+DEBUG CONSTRAINT: Added constraint x[22] + not_covered[15] ≤ 1 for terminal 15
+DEBUG CONSTRAINT: Added constraint x[38] + not_covered[15] ≤ 1 for terminal 15
+DEBUG CONSTRAINT: Added constraint Σx[FSTs] + 7·not_covered[15] ≤ 7 for terminal 15
+DEBUG CONSTRAINT: Added constraint x[23] + not_covered[16] ≤ 1 for terminal 16
+DEBUG CONSTRAINT: Added constraint x[24] + not_covered[16] ≤ 1 for terminal 16
+DEBUG CONSTRAINT: Added constraint Σx[FSTs] + 2·not_covered[16] ≤ 2 for terminal 16
+DEBUG CONSTRAINT: Added constraint x[12] + not_covered[17] ≤ 1 for terminal 17
+DEBUG CONSTRAINT: Added constraint x[15] + not_covered[17] ≤ 1 for terminal 17
+DEBUG CONSTRAINT: Added constraint x[19] + not_covered[17] ≤ 1 for terminal 17
+DEBUG CONSTRAINT: Added constraint x[21] + not_covered[17] ≤ 1 for terminal 17
+DEBUG CONSTRAINT: Added constraint Σx[FSTs] + 4·not_covered[17] ≤ 4 for terminal 17
+DEBUG CONSTRAINT: Added constraint x[12] + not_covered[18] ≤ 1 for terminal 18
+DEBUG CONSTRAINT: Added constraint x[14] + not_covered[18] ≤ 1 for terminal 18
+DEBUG CONSTRAINT: Added constraint x[15] + not_covered[18] ≤ 1 for terminal 18
+DEBUG CONSTRAINT: Added constraint x[19] + not_covered[18] ≤ 1 for terminal 18
+DEBUG CONSTRAINT: Added constraint x[21] + not_covered[18] ≤ 1 for terminal 18
+DEBUG CONSTRAINT: Added constraint x[25] + not_covered[18] ≤ 1 for terminal 18
+DEBUG CONSTRAINT: Added constraint Σx[FSTs] + 6·not_covered[18] ≤ 6 for terminal 18
+DEBUG CONSTRAINT: Added constraint x[4] + not_covered[19] ≤ 1 for terminal 19
+DEBUG CONSTRAINT: Added constraint x[10] + not_covered[19] ≤ 1 for terminal 19
+DEBUG CONSTRAINT: Added constraint x[11] + not_covered[19] ≤ 1 for terminal 19
+DEBUG CONSTRAINT: Added constraint x[17] + not_covered[19] ≤ 1 for terminal 19
+DEBUG CONSTRAINT: Added constraint x[18] + not_covered[19] ≤ 1 for terminal 19
+DEBUG CONSTRAINT: Added constraint x[20] + not_covered[19] ≤ 1 for terminal 19
+DEBUG CONSTRAINT: Added constraint x[26] + not_covered[19] ≤ 1 for terminal 19
+DEBUG CONSTRAINT: Added constraint x[37] + not_covered[19] ≤ 1 for terminal 19
+DEBUG CONSTRAINT: Added constraint x[38] + not_covered[19] ≤ 1 for terminal 19
+DEBUG CONSTRAINT: Added constraint Σx[FSTs] + 9·not_covered[19] ≤ 9 for terminal 19
+DEBUG CONSTRAINT: Added source terminal constraint: not_covered[0] = 0
+DEBUG BUDGET: Adding budget constraint ≤ 50000.000 to constraint pool
+DEBUG BUDGET: Using raw tree costs directly
+DEBUG BUDGET: Budget limit: 50000.000
+DEBUG BUDGET: Building raw cost constraint coefficients:
+DEBUG BUDGET:   x[0] coefficient = 398991 (raw=398991.100)
+DEBUG BUDGET:   x[1] coefficient = 260889 (raw=260889.712)
+DEBUG BUDGET:   x[2] coefficient = 256773 (raw=256773.057)
+DEBUG BUDGET:   x[3] coefficient = 376541 (raw=376541.557)
+DEBUG BUDGET:   x[4] coefficient = 646084 (raw=646084.462)
+DEBUG BUDGET:   x[5] coefficient = 520973 (raw=520973.020)
+DEBUG BUDGET:   x[6] coefficient = 334575 (raw=334575.182)
+DEBUG BUDGET:   x[7] coefficient = 494448 (raw=494448.457)
+DEBUG BUDGET:   x[8] coefficient = 455905 (raw=455905.519)
+DEBUG BUDGET:   x[9] coefficient = 584020 (raw=584020.499)
+DEBUG BUDGET:   x[10] coefficient = 380918 (raw=380918.244)
+DEBUG BUDGET:   x[11] coefficient = 621357 (raw=621357.781)
+DEBUG BUDGET:   x[12] coefficient = 120675 (raw=120675.719)
+DEBUG BUDGET:   x[13] coefficient = 551354 (raw=551354.477)
+DEBUG BUDGET:   x[14] coefficient = 410262 (raw=410262.679)
+DEBUG BUDGET:   x[15] coefficient = 362962 (raw=362962.653)
+DEBUG BUDGET:   x[16] coefficient = 702244 (raw=702244.403)
+DEBUG BUDGET:   x[17] coefficient = 673894 (raw=673894.542)
+DEBUG BUDGET:   x[18] coefficient = 933994 (raw=933994.022)
+DEBUG BUDGET:   x[19] coefficient = 454199 (raw=454199.906)
+DEBUG BUDGET:   x[20] coefficient = 986439 (raw=986439.144)
+DEBUG BUDGET:   x[21] coefficient = 46859 (raw=46859.249)
+DEBUG BUDGET:   x[22] coefficient = 52662 (raw=52662.185)
+DEBUG BUDGET:   x[23] coefficient = 62275 (raw=62275.339)
+DEBUG BUDGET:   x[24] coefficient = 75379 (raw=75379.993)
+DEBUG BUDGET:   x[25] coefficient = 75695 (raw=75695.846)
+DEBUG BUDGET:   x[26] coefficient = 80703 (raw=80703.013)
+DEBUG BUDGET:   x[27] coefficient = 93734 (raw=93734.596)
+DEBUG BUDGET:   x[28] coefficient = 95452 (raw=95452.578)
+DEBUG BUDGET:   x[29] coefficient = 102977 (raw=102977.757)
+DEBUG BUDGET:   x[30] coefficient = 165327 (raw=165327.925)
+DEBUG BUDGET:   x[31] coefficient = 170420 (raw=170420.027)
+DEBUG BUDGET:   x[32] coefficient = 179069 (raw=179069.657)
+DEBUG BUDGET:   x[33] coefficient = 234458 (raw=234458.486)
+DEBUG BUDGET:   x[34] coefficient = 235891 (raw=235891.713)
+DEBUG BUDGET:   x[35] coefficient = 242462 (raw=242462.956)
+DEBUG BUDGET:   x[36] coefficient = 258947 (raw=258947.370)
+DEBUG BUDGET:   x[37] coefficient = 313063 (raw=313063.098)
+DEBUG BUDGET:   x[38] coefficient = 314219 (raw=314219.517)
+DEBUG BUDGET:   x[39] coefficient = 327174 (raw=327174.269)
+DEBUG BUDGET: Constraint: Σ tree_cost[i] * x[i] ≤ 50000
+DEBUG BUDGET: Budget constraint added to pool with 40 FSTs
+DEBUG CONSTRAINT: Adding 'at least one FST' constraint: Σ x[i] ≥ 1
+DEBUG CONSTRAINT: Added 'at least one FST' constraint: Σ x[i] ≥ 1
+ % _gst_initialize_constraint_pool: 0.00 seconds.
+ % Constraint pool initialized with:
+ % 	1	Total degree rows	40	coeffs.
+ % 	20	Cutset rows		111	coeffs.
+ % 	0	Incompatibility rows	0	coeffs.
+ % 	29	2-terminal SEC rows	102	coeffs.
+ % 	1	At least one FST rows	40	coeffs.
+ % 	163	Total rows in pool	135	in LP
+ % @PMEM 163 rows, 1 blocks, 415 nzfree, 0 nzwasted, 1172 nztotal
+DEBUG SOFT: Found 20 terminals, 40 FSTs
+DEBUG SOFT: Adding space for 20 not_covered variables in soft constraints, total ncoeff=514
+DEBUG LP_SETUP: Created LP with 0 rows, 60 columns (nedges=40 + nterms=20)
+DEBUG SOFT: Set bounds for 40 FST vars [1-40] and 20 coverage vars [41-60]
+DEBUG OBJ: Using raw costs - alpha=10000.0 (battery weight), beta=1500000 (coverage penalty)
+DEBUG OBJ: Allocated rowvec[0-60] for ncols=60 LP variables
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 0
+DEBUG OBJ: Recalculating for FST 0 with 3 terminals
+DEBUG OBJ: Terminal 0 (idx 5): battery=33.50, running_total=33.50
+DEBUG OBJ: Terminal 1 (idx 1): battery=88.60, running_total=122.10
+DEBUG OBJ: Terminal 2 (idx 4): battery=79.30, running_total=201.40
+DEBUG OBJ: Recalculated battery_score=201.400 for FST 0
+DEBUG OBJ: FST 0: tree_cost=398991.100, battery_cost=201.400 (weighted=2014000.0), combined=2412991.1
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 1
+DEBUG OBJ: Recalculating for FST 1 with 3 terminals
+DEBUG OBJ: Terminal 0 (idx 10): battery=36.20, running_total=36.20
+DEBUG OBJ: Terminal 1 (idx 5): battery=33.50, running_total=69.70
+DEBUG OBJ: Terminal 2 (idx 4): battery=79.30, running_total=149.00
+DEBUG OBJ: Recalculated battery_score=149.000 for FST 1
+DEBUG OBJ: FST 1: tree_cost=260889.712, battery_cost=149.000 (weighted=1490000.0), combined=1750889.7
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 2
+DEBUG OBJ: Recalculating for FST 2 with 3 terminals
+DEBUG OBJ: Terminal 0 (idx 13): battery=5.90, running_total=5.90
+DEBUG OBJ: Terminal 1 (idx 0): battery=38.30, running_total=44.20
+DEBUG OBJ: Terminal 2 (idx 6): battery=38.60, running_total=82.80
+DEBUG OBJ: Recalculated battery_score=82.800 for FST 2
+DEBUG OBJ: FST 2: tree_cost=256773.057, battery_cost=82.800 (weighted=828000.0), combined=1084773.1
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 3
+DEBUG OBJ: Recalculating for FST 3 with 3 terminals
+DEBUG OBJ: Terminal 0 (idx 15): battery=92.60, running_total=92.60
+DEBUG OBJ: Terminal 1 (idx 3): battery=91.50, running_total=184.10
+DEBUG OBJ: Terminal 2 (idx 6): battery=38.60, running_total=222.70
+DEBUG OBJ: Recalculated battery_score=222.700 for FST 3
+DEBUG OBJ: FST 3: tree_cost=376541.557, battery_cost=222.700 (weighted=2227000.0), combined=2603541.6
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 4
+DEBUG OBJ: Recalculating for FST 4 with 3 terminals
+DEBUG OBJ: Terminal 0 (idx 19): battery=73.60, running_total=73.60
+DEBUG OBJ: Terminal 1 (idx 3): battery=91.50, running_total=165.10
+DEBUG OBJ: Terminal 2 (idx 6): battery=38.60, running_total=203.70
+DEBUG OBJ: Recalculated battery_score=203.700 for FST 4
+DEBUG OBJ: FST 4: tree_cost=646084.462, battery_cost=203.700 (weighted=2037000.0), combined=2683084.5
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 5
+DEBUG OBJ: Recalculating for FST 5 with 3 terminals
+DEBUG OBJ: Terminal 0 (idx 11): battery=2.70, running_total=2.70
+DEBUG OBJ: Terminal 1 (idx 2): battery=77.70, running_total=80.40
+DEBUG OBJ: Terminal 2 (idx 7): battery=49.20, running_total=129.60
+DEBUG OBJ: Recalculated battery_score=129.600 for FST 5
+DEBUG OBJ: FST 5: tree_cost=520973.020, battery_cost=129.600 (weighted=1296000.0), combined=1816973.0
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 6
+DEBUG OBJ: Recalculating for FST 6 with 3 terminals
+DEBUG OBJ: Terminal 0 (idx 9): battery=42.10, running_total=42.10
+DEBUG OBJ: Terminal 1 (idx 7): battery=49.20, running_total=91.30
+DEBUG OBJ: Terminal 2 (idx 8): battery=64.90, running_total=156.20
+DEBUG OBJ: Recalculated battery_score=156.200 for FST 6
+DEBUG OBJ: FST 6: tree_cost=334575.182, battery_cost=156.200 (weighted=1562000.0), combined=1896575.2
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 7
+DEBUG OBJ: Recalculating for FST 7 with 3 terminals
+DEBUG OBJ: Terminal 0 (idx 11): battery=2.70, running_total=2.70
+DEBUG OBJ: Terminal 1 (idx 2): battery=77.70, running_total=80.40
+DEBUG OBJ: Terminal 2 (idx 9): battery=42.10, running_total=122.50
+DEBUG OBJ: Recalculated battery_score=122.500 for FST 7
+DEBUG OBJ: FST 7: tree_cost=494448.457, battery_cost=122.500 (weighted=1225000.0), combined=1719448.5
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 8
+DEBUG OBJ: Recalculating for FST 8 with 3 terminals
+DEBUG OBJ: Terminal 0 (idx 11): battery=2.70, running_total=2.70
+DEBUG OBJ: Terminal 1 (idx 7): battery=49.20, running_total=51.90
+DEBUG OBJ: Terminal 2 (idx 9): battery=42.10, running_total=94.00
+DEBUG OBJ: Recalculated battery_score=94.000 for FST 8
+DEBUG OBJ: FST 8: tree_cost=455905.519, battery_cost=94.000 (weighted=940000.0), combined=1395905.5
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 9
+DEBUG OBJ: Recalculating for FST 9 with 3 terminals
+DEBUG OBJ: Terminal 0 (idx 12): battery=69.00, running_total=69.00
+DEBUG OBJ: Terminal 1 (idx 11): battery=2.70, running_total=71.70
+DEBUG OBJ: Terminal 2 (idx 9): battery=42.10, running_total=113.80
+DEBUG OBJ: Recalculated battery_score=113.800 for FST 9
+DEBUG OBJ: FST 9: tree_cost=584020.499, battery_cost=113.800 (weighted=1138000.0), combined=1722020.5
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 10
+DEBUG OBJ: Recalculating for FST 10 with 3 terminals
+DEBUG OBJ: Terminal 0 (idx 19): battery=73.60, running_total=73.60
+DEBUG OBJ: Terminal 1 (idx 12): battery=69.00, running_total=142.60
+DEBUG OBJ: Terminal 2 (idx 14): battery=76.30, running_total=218.90
+DEBUG OBJ: Recalculated battery_score=218.900 for FST 10
+DEBUG OBJ: FST 10: tree_cost=380918.244, battery_cost=218.900 (weighted=2189000.0), combined=2569918.2
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 11
+DEBUG OBJ: Recalculating for FST 11 with 3 terminals
+DEBUG OBJ: Terminal 0 (idx 19): battery=73.60, running_total=73.60
+DEBUG OBJ: Terminal 1 (idx 15): battery=92.60, running_total=166.20
+DEBUG OBJ: Terminal 2 (idx 6): battery=38.60, running_total=204.80
+DEBUG OBJ: Recalculated battery_score=204.800 for FST 11
+DEBUG OBJ: FST 11: tree_cost=621357.781, battery_cost=204.800 (weighted=2048000.0), combined=2669357.8
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 12
+DEBUG OBJ: Recalculating for FST 12 with 3 terminals
+DEBUG OBJ: Terminal 0 (idx 18): battery=17.20, running_total=17.20
+DEBUG OBJ: Terminal 1 (idx 9): battery=42.10, running_total=59.30
+DEBUG OBJ: Terminal 2 (idx 17): battery=42.60, running_total=101.90
+DEBUG OBJ: Recalculated battery_score=101.900 for FST 12
+DEBUG OBJ: FST 12: tree_cost=120675.719, battery_cost=101.900 (weighted=1019000.0), combined=1139675.7
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 13
+DEBUG OBJ: Recalculating for FST 13 with 4 terminals
+DEBUG OBJ: Terminal 0 (idx 11): battery=2.70, running_total=2.70
+DEBUG OBJ: Terminal 1 (idx 7): battery=49.20, running_total=51.90
+DEBUG OBJ: Terminal 2 (idx 8): battery=64.90, running_total=116.80
+DEBUG OBJ: Terminal 3 (idx 9): battery=42.10, running_total=158.90
+DEBUG OBJ: Recalculated battery_score=158.900 for FST 13
+DEBUG OBJ: FST 13: tree_cost=551354.477, battery_cost=158.900 (weighted=1589000.0), combined=2140354.5
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 14
+DEBUG OBJ: Recalculating for FST 14 with 4 terminals
+DEBUG OBJ: Terminal 0 (idx 18): battery=17.20, running_total=17.20
+DEBUG OBJ: Terminal 1 (idx 9): battery=42.10, running_total=59.30
+DEBUG OBJ: Terminal 2 (idx 7): battery=49.20, running_total=108.50
+DEBUG OBJ: Terminal 3 (idx 8): battery=64.90, running_total=173.40
+DEBUG OBJ: Recalculated battery_score=173.400 for FST 14
+DEBUG OBJ: FST 14: tree_cost=410262.679, battery_cost=173.400 (weighted=1734000.0), combined=2144262.7
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 15
+DEBUG OBJ: Recalculating for FST 15 with 4 terminals
+DEBUG OBJ: Terminal 0 (idx 18): battery=17.20, running_total=17.20
+DEBUG OBJ: Terminal 1 (idx 9): battery=42.10, running_total=59.30
+DEBUG OBJ: Terminal 2 (idx 7): battery=49.20, running_total=108.50
+DEBUG OBJ: Terminal 3 (idx 17): battery=42.60, running_total=151.10
+DEBUG OBJ: Recalculated battery_score=151.100 for FST 15
+DEBUG OBJ: FST 15: tree_cost=362962.653, battery_cost=151.100 (weighted=1511000.0), combined=1873962.7
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 16
+DEBUG OBJ: Recalculating for FST 16 with 4 terminals
+DEBUG OBJ: Terminal 0 (idx 11): battery=2.70, running_total=2.70
+DEBUG OBJ: Terminal 1 (idx 2): battery=77.70, running_total=80.40
+DEBUG OBJ: Terminal 2 (idx 7): battery=49.20, running_total=129.60
+DEBUG OBJ: Terminal 3 (idx 9): battery=42.10, running_total=171.70
+DEBUG OBJ: Recalculated battery_score=171.700 for FST 16
+DEBUG OBJ: FST 16: tree_cost=702244.403, battery_cost=171.700 (weighted=1717000.0), combined=2419244.4
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 17
+DEBUG OBJ: Recalculating for FST 17 with 4 terminals
+DEBUG OBJ: Terminal 0 (idx 19): battery=73.60, running_total=73.60
+DEBUG OBJ: Terminal 1 (idx 15): battery=92.60, running_total=166.20
+DEBUG OBJ: Terminal 2 (idx 3): battery=91.50, running_total=257.70
+DEBUG OBJ: Terminal 3 (idx 6): battery=38.60, running_total=296.30
+DEBUG OBJ: Recalculated battery_score=296.300 for FST 17
+DEBUG OBJ: FST 17: tree_cost=673894.542, battery_cost=296.300 (weighted=2963000.0), combined=3636894.5
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 18
+DEBUG OBJ: Recalculating for FST 18 with 4 terminals
+DEBUG OBJ: Terminal 0 (idx 19): battery=73.60, running_total=73.60
+DEBUG OBJ: Terminal 1 (idx 15): battery=92.60, running_total=166.20
+DEBUG OBJ: Terminal 2 (idx 6): battery=38.60, running_total=204.80
+DEBUG OBJ: Terminal 3 (idx 12): battery=69.00, running_total=273.80
+DEBUG OBJ: Recalculated battery_score=273.800 for FST 18
+DEBUG OBJ: FST 18: tree_cost=933994.022, battery_cost=273.800 (weighted=2738000.0), combined=3671994.0
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 19
+DEBUG OBJ: Recalculating for FST 19 with 5 terminals
+DEBUG OBJ: Terminal 0 (idx 18): battery=17.20, running_total=17.20
+DEBUG OBJ: Terminal 1 (idx 9): battery=42.10, running_total=59.30
+DEBUG OBJ: Terminal 2 (idx 7): battery=49.20, running_total=108.50
+DEBUG OBJ: Terminal 3 (idx 8): battery=64.90, running_total=173.40
+DEBUG OBJ: Terminal 4 (idx 17): battery=42.60, running_total=216.00
+DEBUG OBJ: Recalculated battery_score=216.000 for FST 19
+DEBUG OBJ: FST 19: tree_cost=454199.906, battery_cost=216.000 (weighted=2160000.0), combined=2614199.9
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 20
+DEBUG OBJ: Recalculating for FST 20 with 5 terminals
+DEBUG OBJ: Terminal 0 (idx 19): battery=73.60, running_total=73.60
+DEBUG OBJ: Terminal 1 (idx 15): battery=92.60, running_total=166.20
+DEBUG OBJ: Terminal 2 (idx 3): battery=91.50, running_total=257.70
+DEBUG OBJ: Terminal 3 (idx 6): battery=38.60, running_total=296.30
+DEBUG OBJ: Terminal 4 (idx 12): battery=69.00, running_total=365.30
+DEBUG OBJ: Recalculated battery_score=365.300 for FST 20
+DEBUG OBJ: FST 20: tree_cost=986439.144, battery_cost=365.300 (weighted=3653000.0), combined=4639439.1
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 21
+DEBUG OBJ: Recalculating for FST 21 with 2 terminals
+DEBUG OBJ: Terminal 0 (idx 18): battery=17.20, running_total=17.20
+DEBUG OBJ: Terminal 1 (idx 17): battery=42.60, running_total=59.80
+DEBUG OBJ: Recalculated battery_score=59.800 for FST 21
+DEBUG OBJ: FST 21: tree_cost=46859.249, battery_cost=59.800 (weighted=598000.0), combined=644859.2
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 22
+DEBUG OBJ: Recalculating for FST 22 with 2 terminals
+DEBUG OBJ: Terminal 0 (idx 15): battery=92.60, running_total=92.60
+DEBUG OBJ: Terminal 1 (idx 3): battery=91.50, running_total=184.10
+DEBUG OBJ: Recalculated battery_score=184.100 for FST 22
+DEBUG OBJ: FST 22: tree_cost=52662.185, battery_cost=184.100 (weighted=1841000.0), combined=1893662.2
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 23
+DEBUG OBJ: Recalculating for FST 23 with 2 terminals
+DEBUG OBJ: Terminal 0 (idx 16): battery=54.00, running_total=54.00
+DEBUG OBJ: Terminal 1 (idx 2): battery=77.70, running_total=131.70
+DEBUG OBJ: Recalculated battery_score=131.700 for FST 23
+DEBUG OBJ: FST 23: tree_cost=62275.339, battery_cost=131.700 (weighted=1317000.0), combined=1379275.3
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 24
+DEBUG OBJ: Recalculating for FST 24 with 2 terminals
+DEBUG OBJ: Terminal 0 (idx 16): battery=54.00, running_total=54.00
+DEBUG OBJ: Terminal 1 (idx 1): battery=88.60, running_total=142.60
+DEBUG OBJ: Recalculated battery_score=142.600 for FST 24
+DEBUG OBJ: FST 24: tree_cost=75379.993, battery_cost=142.600 (weighted=1426000.0), combined=1501380.0
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 25
+DEBUG OBJ: Recalculating for FST 25 with 2 terminals
+DEBUG OBJ: Terminal 0 (idx 18): battery=17.20, running_total=17.20
+DEBUG OBJ: Terminal 1 (idx 9): battery=42.10, running_total=59.30
+DEBUG OBJ: Recalculated battery_score=59.300 for FST 25
+DEBUG OBJ: FST 25: tree_cost=75695.846, battery_cost=59.300 (weighted=593000.0), combined=668695.8
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 26
+DEBUG OBJ: Recalculating for FST 26 with 2 terminals
+DEBUG OBJ: Terminal 0 (idx 14): battery=76.30, running_total=76.30
+DEBUG OBJ: Terminal 1 (idx 19): battery=73.60, running_total=149.90
+DEBUG OBJ: Recalculated battery_score=149.900 for FST 26
+DEBUG OBJ: FST 26: tree_cost=80703.013, battery_cost=149.900 (weighted=1499000.0), combined=1579703.0
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 27
+DEBUG OBJ: Recalculating for FST 27 with 2 terminals
+DEBUG OBJ: Terminal 0 (idx 0): battery=38.30, running_total=38.30
+DEBUG OBJ: Terminal 1 (idx 13): battery=5.90, running_total=44.20
+DEBUG OBJ: Recalculated battery_score=44.200 for FST 27
+DEBUG OBJ: FST 27: tree_cost=93734.596, battery_cost=44.200 (weighted=442000.0), combined=535734.6
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 28
+DEBUG OBJ: Recalculating for FST 28 with 2 terminals
+DEBUG OBJ: Terminal 0 (idx 8): battery=64.90, running_total=64.90
+DEBUG OBJ: Terminal 1 (idx 7): battery=49.20, running_total=114.10
+DEBUG OBJ: Recalculated battery_score=114.100 for FST 28
+DEBUG OBJ: FST 28: tree_cost=95452.578, battery_cost=114.100 (weighted=1141000.0), combined=1236452.6
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 29
+DEBUG OBJ: Recalculating for FST 29 with 2 terminals
+DEBUG OBJ: Terminal 0 (idx 5): battery=33.50, running_total=33.50
+DEBUG OBJ: Terminal 1 (idx 10): battery=36.20, running_total=69.70
+DEBUG OBJ: Recalculated battery_score=69.700 for FST 29
+DEBUG OBJ: FST 29: tree_cost=102977.757, battery_cost=69.700 (weighted=697000.0), combined=799977.8
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 30
+DEBUG OBJ: Recalculating for FST 30 with 2 terminals
+DEBUG OBJ: Terminal 0 (idx 4): battery=79.30, running_total=79.30
+DEBUG OBJ: Terminal 1 (idx 5): battery=33.50, running_total=112.80
+DEBUG OBJ: Recalculated battery_score=112.800 for FST 30
+DEBUG OBJ: FST 30: tree_cost=165327.925, battery_cost=112.800 (weighted=1128000.0), combined=1293327.9
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 31
+DEBUG OBJ: Recalculating for FST 31 with 2 terminals
+DEBUG OBJ: Terminal 0 (idx 6): battery=38.60, running_total=38.60
+DEBUG OBJ: Terminal 1 (idx 0): battery=38.30, running_total=76.90
+DEBUG OBJ: Recalculated battery_score=76.900 for FST 31
+DEBUG OBJ: FST 31: tree_cost=170420.027, battery_cost=76.900 (weighted=769000.0), combined=939420.0
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 32
+DEBUG OBJ: Recalculating for FST 32 with 2 terminals
+DEBUG OBJ: Terminal 0 (idx 13): battery=5.90, running_total=5.90
+DEBUG OBJ: Terminal 1 (idx 4): battery=79.30, running_total=85.20
+DEBUG OBJ: Recalculated battery_score=85.200 for FST 32
+DEBUG OBJ: FST 32: tree_cost=179069.657, battery_cost=85.200 (weighted=852000.0), combined=1031069.7
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 33
+DEBUG OBJ: Recalculating for FST 33 with 2 terminals
+DEBUG OBJ: Terminal 0 (idx 5): battery=33.50, running_total=33.50
+DEBUG OBJ: Terminal 1 (idx 1): battery=88.60, running_total=122.10
+DEBUG OBJ: Recalculated battery_score=122.100 for FST 33
+DEBUG OBJ: FST 33: tree_cost=234458.486, battery_cost=122.100 (weighted=1221000.0), combined=1455458.5
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 34
+DEBUG OBJ: Recalculating for FST 34 with 2 terminals
+DEBUG OBJ: Terminal 0 (idx 11): battery=2.70, running_total=2.70
+DEBUG OBJ: Terminal 1 (idx 9): battery=42.10, running_total=44.80
+DEBUG OBJ: Recalculated battery_score=44.800 for FST 34
+DEBUG OBJ: FST 34: tree_cost=235891.713, battery_cost=44.800 (weighted=448000.0), combined=683891.7
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 35
+DEBUG OBJ: Recalculating for FST 35 with 2 terminals
+DEBUG OBJ: Terminal 0 (idx 9): battery=42.10, running_total=42.10
+DEBUG OBJ: Terminal 1 (idx 7): battery=49.20, running_total=91.30
+DEBUG OBJ: Recalculated battery_score=91.300 for FST 35
+DEBUG OBJ: FST 35: tree_cost=242462.956, battery_cost=91.300 (weighted=913000.0), combined=1155463.0
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 36
+DEBUG OBJ: Recalculating for FST 36 with 2 terminals
+DEBUG OBJ: Terminal 0 (idx 2): battery=77.70, running_total=77.70
+DEBUG OBJ: Terminal 1 (idx 11): battery=2.70, running_total=80.40
+DEBUG OBJ: Recalculated battery_score=80.400 for FST 36
+DEBUG OBJ: FST 36: tree_cost=258947.370, battery_cost=80.400 (weighted=804000.0), combined=1062947.4
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 37
+DEBUG OBJ: Recalculating for FST 37 with 2 terminals
+DEBUG OBJ: Terminal 0 (idx 19): battery=73.60, running_total=73.60
+DEBUG OBJ: Terminal 1 (idx 12): battery=69.00, running_total=142.60
+DEBUG OBJ: Recalculated battery_score=142.600 for FST 37
+DEBUG OBJ: FST 37: tree_cost=313063.098, battery_cost=142.600 (weighted=1426000.0), combined=1739063.1
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 38
+DEBUG OBJ: Recalculating for FST 38 with 2 terminals
+DEBUG OBJ: Terminal 0 (idx 15): battery=92.60, running_total=92.60
+DEBUG OBJ: Terminal 1 (idx 19): battery=73.60, running_total=166.20
+DEBUG OBJ: Recalculated battery_score=166.200 for FST 38
+DEBUG OBJ: FST 38: tree_cost=314219.517, battery_cost=166.200 (weighted=1662000.0), combined=1976219.5
+DEBUG OBJ: Full_trees battery_score=0.000 for FST 39
+DEBUG OBJ: Recalculating for FST 39 with 2 terminals
+DEBUG OBJ: Terminal 0 (idx 3): battery=91.50, running_total=91.50
+DEBUG OBJ: Terminal 1 (idx 6): battery=38.60, running_total=130.10
+DEBUG OBJ: Recalculated battery_score=130.100 for FST 39
+DEBUG OBJ: FST 39: tree_cost=327174.269, battery_cost=130.100 (weighted=1301000.0), combined=1628174.3
+DEBUG OBJ: Added penalty terms beta=1500000 for 20 not_covered variables [41-60]
+DEBUG LP_MATRIX: LP has 0 rows, 60 columns after setup
+DEBUG EXTRA_COEFF: Calculated extra_coeff=1 for 135 rows
+DEBUG SOFT: Added not_covered_0 (RC_var 43 -> matrix_idx 40) to soft constraint 134
+DEBUG MATRIX_CHECK: nzi=495, ncoeff=514, extra_coeff=1, expected=515
+ERROR: Matrix coefficient count mismatch! nzi=495 != ncoeff=514 + extra_coeff=1
+WARNING: Allowing discrepancy in budget mode (nzi=495 vs expected=515)
+DEBUG MATRIX: Total matrix has 495 entries (nzi=495)
+DEBUG MATRIX: matbeg[135] = 495 (should equal nzi)
+DEBUG LP: Calling add_rows with 135 rows
+DEBUG LP: Before add_rows: LP has 0 rows, 60 cols, 60 nonzeros
+DEBUG LP: After add_rows: LP has 135 rows, 60 cols, 555 nonzeros
+DEBUG NLPROWS: nrows=135, extra_rows=0, setting nlprows=135
+ % _gst_build_initial_formulation: 0.00 seconds.
+DEBUG BB: Expected nlprows=135, total rows=163
+DEBUG BB: Row 0 (uid=0) has lprow=0 (included, j=0)
+DEBUG BB: Row 1 (uid=1) has lprow=1 (included, j=1)
+DEBUG BB: Row 2 (uid=2) has lprow=2 (included, j=2)
+DEBUG BB: Row 3 (uid=3) has lprow=3 (included, j=3)
+DEBUG BB: Row 4 (uid=4) has lprow=4 (included, j=4)
+DEBUG BB: Row 5 (uid=5) has lprow=5 (included, j=5)
+DEBUG BB: Row 6 (uid=6) has lprow=6 (included, j=6)
+DEBUG BB: Row 7 (uid=7) has lprow=7 (included, j=7)
+DEBUG BB: Row 8 (uid=8) has lprow=8 (included, j=8)
+DEBUG BB: Row 9 (uid=9) has lprow=9 (included, j=9)
+DEBUG BB: Row 10 (uid=10) has lprow=10 (included, j=10)
+DEBUG BB: Row 11 (uid=11) has lprow=11 (included, j=11)
+DEBUG BB: Row 12 (uid=12) has lprow=12 (included, j=12)
+DEBUG BB: Row 13 (uid=13) has lprow=13 (included, j=13)
+DEBUG BB: Row 14 (uid=14) has lprow=14 (included, j=14)
+DEBUG BB: Row 15 (uid=15) has lprow=15 (included, j=15)
+DEBUG BB: Row 16 (uid=16) has lprow=16 (included, j=16)
+DEBUG BB: Row 17 (uid=17) has lprow=17 (included, j=17)
+DEBUG BB: Row 18 (uid=18) has lprow=18 (included, j=18)
+DEBUG BB: Row 19 (uid=19) has lprow=19 (included, j=19)
+DEBUG BB: Row 20 (uid=20) has lprow=20 (included, j=20)
+DEBUG BB: Row 21 (uid=21) has lprow=21 (included, j=21)
+DEBUG BB: Row 22 (uid=22) has lprow=22 (included, j=22)
+DEBUG BB: Row 23 (uid=23) has lprow=23 (included, j=23)
+DEBUG BB: Row 24 (uid=24) has lprow=24 (included, j=24)
+DEBUG BB: Row 25 (uid=25) has lprow=25 (included, j=25)
+DEBUG BB: Row 26 (uid=26) has lprow=26 (included, j=26)
+DEBUG BB: Row 27 (uid=27) has lprow=27 (included, j=27)
+DEBUG BB: Row 28 (uid=28) has lprow=28 (included, j=28)
+DEBUG BB: Row 29 (uid=29) has lprow=29 (included, j=29)
+DEBUG BB: Row 30 (uid=30) has lprow=30 (included, j=30)
+DEBUG BB: Row 31 (uid=31) has lprow=31 (included, j=31)
+DEBUG BB: Row 32 (uid=32) has lprow=32 (included, j=32)
+DEBUG BB: Row 33 (uid=33) has lprow=33 (included, j=33)
+DEBUG BB: Row 34 (uid=34) has lprow=34 (included, j=34)
+DEBUG BB: Row 35 (uid=35) has lprow=35 (included, j=35)
+DEBUG BB: Row 36 (uid=36) has lprow=36 (included, j=36)
+DEBUG BB: Row 37 (uid=37) has lprow=37 (included, j=37)
+DEBUG BB: Row 38 (uid=38) has lprow=38 (included, j=38)
+DEBUG BB: Row 39 (uid=39) has lprow=39 (included, j=39)
+DEBUG BB: Row 40 (uid=40) has lprow=40 (included, j=40)
+DEBUG BB: Row 41 (uid=41) has lprow=41 (included, j=41)
+DEBUG BB: Row 42 (uid=42) has lprow=42 (included, j=42)
+DEBUG BB: Row 43 (uid=43) has lprow=43 (included, j=43)
+DEBUG BB: Row 44 (uid=44) has lprow=44 (included, j=44)
+DEBUG BB: Row 45 (uid=45) has lprow=45 (included, j=45)
+DEBUG BB: Row 46 (uid=46) has lprow=46 (included, j=46)
+DEBUG BB: Row 47 (uid=47) has lprow=47 (included, j=47)
+DEBUG BB: Row 48 (uid=48) has lprow=48 (included, j=48)
+DEBUG BB: Row 49 (uid=49) has lprow=49 (included, j=49)
+DEBUG BB: Row 50 (uid=50) has lprow=50 (included, j=50)
+DEBUG BB: Row 51 (uid=51) has lprow=51 (included, j=51)
+DEBUG BB: Row 52 (uid=52) has lprow=52 (included, j=52)
+DEBUG BB: Row 53 (uid=53) has lprow=53 (included, j=53)
+DEBUG BB: Row 54 (uid=54) has lprow=54 (included, j=54)
+DEBUG BB: Row 55 (uid=55) has lprow=55 (included, j=55)
+DEBUG BB: Row 56 (uid=56) has lprow=56 (included, j=56)
+DEBUG BB: Row 57 (uid=57) has lprow=57 (included, j=57)
+DEBUG BB: Row 58 (uid=58) has lprow=58 (included, j=58)
+DEBUG BB: Row 59 (uid=59) has lprow=59 (included, j=59)
+DEBUG BB: Row 60 (uid=60) has lprow=60 (included, j=60)
+DEBUG BB: Row 61 (uid=61) has lprow=61 (included, j=61)
+DEBUG BB: Row 62 (uid=62) has lprow=62 (included, j=62)
+DEBUG BB: Row 63 (uid=63) has lprow=63 (included, j=63)
+DEBUG BB: Row 64 (uid=64) has lprow=64 (included, j=64)
+DEBUG BB: Row 65 (uid=65) has lprow=65 (included, j=65)
+DEBUG BB: Row 66 (uid=66) has lprow=66 (included, j=66)
+DEBUG BB: Row 67 (uid=67) has lprow=67 (included, j=67)
+DEBUG BB: Row 68 (uid=68) has lprow=68 (included, j=68)
+DEBUG BB: Row 69 (uid=69) has lprow=69 (included, j=69)
+DEBUG BB: Row 70 (uid=70) has lprow=70 (included, j=70)
+DEBUG BB: Row 71 (uid=71) has lprow=71 (included, j=71)
+DEBUG BB: Row 72 (uid=72) has lprow=72 (included, j=72)
+DEBUG BB: Row 73 (uid=73) has lprow=73 (included, j=73)
+DEBUG BB: Row 74 (uid=74) has lprow=74 (included, j=74)
+DEBUG BB: Row 75 (uid=75) has lprow=75 (included, j=75)
+DEBUG BB: Row 76 (uid=76) has lprow=76 (included, j=76)
+DEBUG BB: Row 77 (uid=77) has lprow=77 (included, j=77)
+DEBUG BB: Row 78 (uid=78) has lprow=78 (included, j=78)
+DEBUG BB: Row 79 (uid=79) has lprow=79 (included, j=79)
+DEBUG BB: Row 80 (uid=80) has lprow=80 (included, j=80)
+DEBUG BB: Row 81 (uid=81) has lprow=81 (included, j=81)
+DEBUG BB: Row 82 (uid=82) has lprow=82 (included, j=82)
+DEBUG BB: Row 83 (uid=83) has lprow=83 (included, j=83)
+DEBUG BB: Row 84 (uid=84) has lprow=84 (included, j=84)
+DEBUG BB: Row 85 (uid=85) has lprow=85 (included, j=85)
+DEBUG BB: Row 86 (uid=86) has lprow=86 (included, j=86)
+DEBUG BB: Row 87 (uid=87) has lprow=87 (included, j=87)
+DEBUG BB: Row 88 (uid=88) has lprow=88 (included, j=88)
+DEBUG BB: Row 89 (uid=89) has lprow=89 (included, j=89)
+DEBUG BB: Row 90 (uid=90) has lprow=90 (included, j=90)
+DEBUG BB: Row 91 (uid=91) has lprow=91 (included, j=91)
+DEBUG BB: Row 92 (uid=92) has lprow=92 (included, j=92)
+DEBUG BB: Row 93 (uid=93) has lprow=93 (included, j=93)
+DEBUG BB: Row 94 (uid=94) has lprow=94 (included, j=94)
+DEBUG BB: Row 95 (uid=95) has lprow=95 (included, j=95)
+DEBUG BB: Row 96 (uid=96) has lprow=96 (included, j=96)
+DEBUG BB: Row 97 (uid=97) has lprow=97 (included, j=97)
+DEBUG BB: Row 98 (uid=98) has lprow=98 (included, j=98)
+DEBUG BB: Row 99 (uid=99) has lprow=99 (included, j=99)
+DEBUG BB: Row 100 (uid=100) has lprow=100 (included, j=100)
+DEBUG BB: Row 101 (uid=101) has lprow=101 (included, j=101)
+DEBUG BB: Row 102 (uid=102) has lprow=102 (included, j=102)
+DEBUG BB: Row 103 (uid=103) has lprow=103 (included, j=103)
+DEBUG BB: Row 104 (uid=104) has lprow=104 (included, j=104)
+DEBUG BB: Row 105 (uid=105) has lprow=105 (included, j=105)
+DEBUG BB: Row 106 (uid=106) has lprow=106 (included, j=106)
+DEBUG BB: Row 107 (uid=107) has lprow=107 (included, j=107)
+DEBUG BB: Row 108 (uid=108) has lprow=108 (included, j=108)
+DEBUG BB: Row 109 (uid=109) has lprow=109 (included, j=109)
+DEBUG BB: Row 110 (uid=110) has lprow=110 (included, j=110)
+DEBUG BB: Row 111 (uid=111) has lprow=111 (included, j=111)
+DEBUG BB: Row 112 (uid=112) has lprow=112 (included, j=112)
+DEBUG BB: Row 113 (uid=113) has lprow=113 (included, j=113)
+DEBUG BB: Row 114 (uid=114) has lprow=114 (included, j=114)
+DEBUG BB: Row 115 (uid=115) has lprow=115 (included, j=115)
+DEBUG BB: Row 116 (uid=116) has lprow=116 (included, j=116)
+DEBUG BB: Row 117 (uid=117) has lprow=117 (included, j=117)
+DEBUG BB: Row 118 (uid=118) has lprow=118 (included, j=118)
+DEBUG BB: Row 119 (uid=119) has lprow=119 (included, j=119)
+DEBUG BB: Row 120 (uid=120) has lprow=120 (included, j=120)
+DEBUG BB: Row 121 (uid=121) has lprow=121 (included, j=121)
+DEBUG BB: Row 122 (uid=122) has lprow=122 (included, j=122)
+DEBUG BB: Row 123 (uid=123) has lprow=123 (included, j=123)
+DEBUG BB: Row 124 (uid=124) has lprow=124 (included, j=124)
+DEBUG BB: Row 125 (uid=125) has lprow=125 (included, j=125)
+DEBUG BB: Row 126 (uid=126) has lprow=126 (included, j=126)
+DEBUG BB: Row 127 (uid=127) has lprow=127 (included, j=127)
+DEBUG BB: Row 128 (uid=128) has lprow=128 (included, j=128)
+DEBUG BB: Row 129 (uid=129) has lprow=129 (included, j=129)
+DEBUG BB: Row 130 (uid=130) has lprow=130 (included, j=130)
+DEBUG BB: Row 131 (uid=131) has lprow=131 (included, j=131)
+DEBUG BB: Row 132 (uid=132) has lprow=132 (included, j=132)
+DEBUG BB: Row 133 (uid=133) has lprow=-1 (skipped)
+DEBUG BB: Row 134 (uid=134) has lprow=-1 (skipped)
+DEBUG BB: Row 135 (uid=135) has lprow=-1 (skipped)
+DEBUG BB: Row 136 (uid=136) has lprow=-1 (skipped)
+DEBUG BB: Row 137 (uid=137) has lprow=-1 (skipped)
+DEBUG BB: Row 138 (uid=138) has lprow=-1 (skipped)
+DEBUG BB: Row 139 (uid=139) has lprow=-1 (skipped)
+DEBUG BB: Row 140 (uid=140) has lprow=-1 (skipped)
+DEBUG BB: Row 141 (uid=141) has lprow=-1 (skipped)
+DEBUG BB: Row 142 (uid=142) has lprow=-1 (skipped)
+DEBUG BB: Row 143 (uid=143) has lprow=-1 (skipped)
+DEBUG BB: Row 144 (uid=144) has lprow=-1 (skipped)
+DEBUG BB: Row 145 (uid=145) has lprow=-1 (skipped)
+DEBUG BB: Row 146 (uid=146) has lprow=-1 (skipped)
+DEBUG BB: Row 147 (uid=147) has lprow=-1 (skipped)
+DEBUG BB: Row 148 (uid=148) has lprow=-1 (skipped)
+DEBUG BB: Row 149 (uid=149) has lprow=-1 (skipped)
+DEBUG BB: Row 150 (uid=150) has lprow=-1 (skipped)
+DEBUG BB: Row 151 (uid=151) has lprow=-1 (skipped)
+DEBUG BB: Row 152 (uid=152) has lprow=-1 (skipped)
+DEBUG BB: Row 153 (uid=153) has lprow=-1 (skipped)
+DEBUG BB: Row 154 (uid=154) has lprow=-1 (skipped)
+DEBUG BB: Row 155 (uid=155) has lprow=-1 (skipped)
+DEBUG BB: Row 156 (uid=156) has lprow=-1 (skipped)
+DEBUG BB: Row 157 (uid=157) has lprow=-1 (skipped)
+DEBUG BB: Row 158 (uid=158) has lprow=-1 (skipped)
+DEBUG BB: Row 159 (uid=159) has lprow=-1 (skipped)
+DEBUG BB: Row 160 (uid=160) has lprow=-1 (skipped)
+DEBUG BB: Row 161 (uid=161) has lprow=133 (included, j=133)
+DEBUG BB: Row 162 (uid=162) has lprow=134 (included, j=134)
+DEBUG BB: Found 135 actual LP rows, expected 135
+DEBUG BB: Starting new iteration, preempt=0
+DEBUG BB: Selected node=0x55b72dbef600
+% Resuming node 0
+DEBUG CONSTRNT: LP rows=135, pool->nlprows=135, pool->npend=0
+DEBUG CONSTRNT: Checking 135 LP rows (pool tracks 135, total LP rows 135)
+DEBUG CONSTRNT: Checking LP row 0 -> pool row 0
+DEBUG CONSTRNT: Pool row 0 has lprow=0, expected 0
+DEBUG CONSTRNT: Checking LP row 1 -> pool row 1
+DEBUG CONSTRNT: Pool row 1 has lprow=1, expected 1
+DEBUG CONSTRNT: Checking LP row 2 -> pool row 2
+DEBUG CONSTRNT: Pool row 2 has lprow=2, expected 2
+DEBUG CONSTRNT: Checking LP row 3 -> pool row 3
+DEBUG CONSTRNT: Pool row 3 has lprow=3, expected 3
+DEBUG CONSTRNT: Checking LP row 4 -> pool row 4
+DEBUG CONSTRNT: Pool row 4 has lprow=4, expected 4
+DEBUG CONSTRNT: Checking LP row 5 -> pool row 5
+DEBUG CONSTRNT: Pool row 5 has lprow=5, expected 5
+DEBUG CONSTRNT: Checking LP row 6 -> pool row 6
+DEBUG CONSTRNT: Pool row 6 has lprow=6, expected 6
+DEBUG CONSTRNT: Checking LP row 7 -> pool row 7
+DEBUG CONSTRNT: Pool row 7 has lprow=7, expected 7
+DEBUG CONSTRNT: Checking LP row 8 -> pool row 8
+DEBUG CONSTRNT: Pool row 8 has lprow=8, expected 8
+DEBUG CONSTRNT: Checking LP row 9 -> pool row 9
+DEBUG CONSTRNT: Pool row 9 has lprow=9, expected 9
+DEBUG CONSTRNT: Checking LP row 10 -> pool row 10
+DEBUG CONSTRNT: Pool row 10 has lprow=10, expected 10
+DEBUG CONSTRNT: Checking LP row 11 -> pool row 11
+DEBUG CONSTRNT: Pool row 11 has lprow=11, expected 11
+DEBUG CONSTRNT: Checking LP row 12 -> pool row 12
+DEBUG CONSTRNT: Pool row 12 has lprow=12, expected 12
+DEBUG CONSTRNT: Checking LP row 13 -> pool row 13
+DEBUG CONSTRNT: Pool row 13 has lprow=13, expected 13
+DEBUG CONSTRNT: Checking LP row 14 -> pool row 14
+DEBUG CONSTRNT: Pool row 14 has lprow=14, expected 14
+DEBUG CONSTRNT: Checking LP row 15 -> pool row 15
+DEBUG CONSTRNT: Pool row 15 has lprow=15, expected 15
+DEBUG CONSTRNT: Checking LP row 16 -> pool row 16
+DEBUG CONSTRNT: Pool row 16 has lprow=16, expected 16
+DEBUG CONSTRNT: Checking LP row 17 -> pool row 17
+DEBUG CONSTRNT: Pool row 17 has lprow=17, expected 17
+DEBUG CONSTRNT: Checking LP row 18 -> pool row 18
+DEBUG CONSTRNT: Pool row 18 has lprow=18, expected 18
+DEBUG CONSTRNT: Checking LP row 19 -> pool row 19
+DEBUG CONSTRNT: Pool row 19 has lprow=19, expected 19
+DEBUG CONSTRNT: Checking LP row 20 -> pool row 20
+DEBUG CONSTRNT: Pool row 20 has lprow=20, expected 20
+DEBUG CONSTRNT: Checking LP row 21 -> pool row 21
+DEBUG CONSTRNT: Pool row 21 has lprow=21, expected 21
+DEBUG CONSTRNT: Checking LP row 22 -> pool row 22
+DEBUG CONSTRNT: Pool row 22 has lprow=22, expected 22
+DEBUG CONSTRNT: Checking LP row 23 -> pool row 23
+DEBUG CONSTRNT: Pool row 23 has lprow=23, expected 23
+DEBUG CONSTRNT: Checking LP row 24 -> pool row 24
+DEBUG CONSTRNT: Pool row 24 has lprow=24, expected 24
+DEBUG CONSTRNT: Checking LP row 25 -> pool row 25
+DEBUG CONSTRNT: Pool row 25 has lprow=25, expected 25
+DEBUG CONSTRNT: Checking LP row 26 -> pool row 26
+DEBUG CONSTRNT: Pool row 26 has lprow=26, expected 26
+DEBUG CONSTRNT: Checking LP row 27 -> pool row 27
+DEBUG CONSTRNT: Pool row 27 has lprow=27, expected 27
+DEBUG CONSTRNT: Checking LP row 28 -> pool row 28
+DEBUG CONSTRNT: Pool row 28 has lprow=28, expected 28
+DEBUG CONSTRNT: Checking LP row 29 -> pool row 29
+DEBUG CONSTRNT: Pool row 29 has lprow=29, expected 29
+DEBUG CONSTRNT: Checking LP row 30 -> pool row 30
+DEBUG CONSTRNT: Pool row 30 has lprow=30, expected 30
+DEBUG CONSTRNT: Checking LP row 31 -> pool row 31
+DEBUG CONSTRNT: Pool row 31 has lprow=31, expected 31
+DEBUG CONSTRNT: Checking LP row 32 -> pool row 32
+DEBUG CONSTRNT: Pool row 32 has lprow=32, expected 32
+DEBUG CONSTRNT: Checking LP row 33 -> pool row 33
+DEBUG CONSTRNT: Pool row 33 has lprow=33, expected 33
+DEBUG CONSTRNT: Checking LP row 34 -> pool row 34
+DEBUG CONSTRNT: Pool row 34 has lprow=34, expected 34
+DEBUG CONSTRNT: Checking LP row 35 -> pool row 35
+DEBUG CONSTRNT: Pool row 35 has lprow=35, expected 35
+DEBUG CONSTRNT: Checking LP row 36 -> pool row 36
+DEBUG CONSTRNT: Pool row 36 has lprow=36, expected 36
+DEBUG CONSTRNT: Checking LP row 37 -> pool row 37
+DEBUG CONSTRNT: Pool row 37 has lprow=37, expected 37
+DEBUG CONSTRNT: Checking LP row 38 -> pool row 38
+DEBUG CONSTRNT: Pool row 38 has lprow=38, expected 38
+DEBUG CONSTRNT: Checking LP row 39 -> pool row 39
+DEBUG CONSTRNT: Pool row 39 has lprow=39, expected 39
+DEBUG CONSTRNT: Checking LP row 40 -> pool row 40
+DEBUG CONSTRNT: Pool row 40 has lprow=40, expected 40
+DEBUG CONSTRNT: Checking LP row 41 -> pool row 41
+DEBUG CONSTRNT: Pool row 41 has lprow=41, expected 41
+DEBUG CONSTRNT: Checking LP row 42 -> pool row 42
+DEBUG CONSTRNT: Pool row 42 has lprow=42, expected 42
+DEBUG CONSTRNT: Checking LP row 43 -> pool row 43
+DEBUG CONSTRNT: Pool row 43 has lprow=43, expected 43
+DEBUG CONSTRNT: Checking LP row 44 -> pool row 44
+DEBUG CONSTRNT: Pool row 44 has lprow=44, expected 44
+DEBUG CONSTRNT: Checking LP row 45 -> pool row 45
+DEBUG CONSTRNT: Pool row 45 has lprow=45, expected 45
+DEBUG CONSTRNT: Checking LP row 46 -> pool row 46
+DEBUG CONSTRNT: Pool row 46 has lprow=46, expected 46
+DEBUG CONSTRNT: Checking LP row 47 -> pool row 47
+DEBUG CONSTRNT: Pool row 47 has lprow=47, expected 47
+DEBUG CONSTRNT: Checking LP row 48 -> pool row 48
+DEBUG CONSTRNT: Pool row 48 has lprow=48, expected 48
+DEBUG CONSTRNT: Checking LP row 49 -> pool row 49
+DEBUG CONSTRNT: Pool row 49 has lprow=49, expected 49
+DEBUG CONSTRNT: Checking LP row 50 -> pool row 50
+DEBUG CONSTRNT: Pool row 50 has lprow=50, expected 50
+DEBUG CONSTRNT: Checking LP row 51 -> pool row 51
+DEBUG CONSTRNT: Pool row 51 has lprow=51, expected 51
+DEBUG CONSTRNT: Checking LP row 52 -> pool row 52
+DEBUG CONSTRNT: Pool row 52 has lprow=52, expected 52
+DEBUG CONSTRNT: Checking LP row 53 -> pool row 53
+DEBUG CONSTRNT: Pool row 53 has lprow=53, expected 53
+DEBUG CONSTRNT: Checking LP row 54 -> pool row 54
+DEBUG CONSTRNT: Pool row 54 has lprow=54, expected 54
+DEBUG CONSTRNT: Checking LP row 55 -> pool row 55
+DEBUG CONSTRNT: Pool row 55 has lprow=55, expected 55
+DEBUG CONSTRNT: Checking LP row 56 -> pool row 56
+DEBUG CONSTRNT: Pool row 56 has lprow=56, expected 56
+DEBUG CONSTRNT: Checking LP row 57 -> pool row 57
+DEBUG CONSTRNT: Pool row 57 has lprow=57, expected 57
+DEBUG CONSTRNT: Checking LP row 58 -> pool row 58
+DEBUG CONSTRNT: Pool row 58 has lprow=58, expected 58
+DEBUG CONSTRNT: Checking LP row 59 -> pool row 59
+DEBUG CONSTRNT: Pool row 59 has lprow=59, expected 59
+DEBUG CONSTRNT: Checking LP row 60 -> pool row 60
+DEBUG CONSTRNT: Pool row 60 has lprow=60, expected 60
+DEBUG CONSTRNT: Checking LP row 61 -> pool row 61
+DEBUG CONSTRNT: Pool row 61 has lprow=61, expected 61
+DEBUG CONSTRNT: Checking LP row 62 -> pool row 62
+DEBUG CONSTRNT: Pool row 62 has lprow=62, expected 62
+DEBUG CONSTRNT: Checking LP row 63 -> pool row 63
+DEBUG CONSTRNT: Pool row 63 has lprow=63, expected 63
+DEBUG CONSTRNT: Checking LP row 64 -> pool row 64
+DEBUG CONSTRNT: Pool row 64 has lprow=64, expected 64
+DEBUG CONSTRNT: Checking LP row 65 -> pool row 65
+DEBUG CONSTRNT: Pool row 65 has lprow=65, expected 65
+DEBUG CONSTRNT: Checking LP row 66 -> pool row 66
+DEBUG CONSTRNT: Pool row 66 has lprow=66, expected 66
+DEBUG CONSTRNT: Checking LP row 67 -> pool row 67
+DEBUG CONSTRNT: Pool row 67 has lprow=67, expected 67
+DEBUG CONSTRNT: Checking LP row 68 -> pool row 68
+DEBUG CONSTRNT: Pool row 68 has lprow=68, expected 68
+DEBUG CONSTRNT: Checking LP row 69 -> pool row 69
+DEBUG CONSTRNT: Pool row 69 has lprow=69, expected 69
+DEBUG CONSTRNT: Checking LP row 70 -> pool row 70
+DEBUG CONSTRNT: Pool row 70 has lprow=70, expected 70
+DEBUG CONSTRNT: Checking LP row 71 -> pool row 71
+DEBUG CONSTRNT: Pool row 71 has lprow=71, expected 71
+DEBUG CONSTRNT: Checking LP row 72 -> pool row 72
+DEBUG CONSTRNT: Pool row 72 has lprow=72, expected 72
+DEBUG CONSTRNT: Checking LP row 73 -> pool row 73
+DEBUG CONSTRNT: Pool row 73 has lprow=73, expected 73
+DEBUG CONSTRNT: Checking LP row 74 -> pool row 74
+DEBUG CONSTRNT: Pool row 74 has lprow=74, expected 74
+DEBUG CONSTRNT: Checking LP row 75 -> pool row 75
+DEBUG CONSTRNT: Pool row 75 has lprow=75, expected 75
+DEBUG CONSTRNT: Checking LP row 76 -> pool row 76
+DEBUG CONSTRNT: Pool row 76 has lprow=76, expected 76
+DEBUG CONSTRNT: Checking LP row 77 -> pool row 77
+DEBUG CONSTRNT: Pool row 77 has lprow=77, expected 77
+DEBUG CONSTRNT: Checking LP row 78 -> pool row 78
+DEBUG CONSTRNT: Pool row 78 has lprow=78, expected 78
+DEBUG CONSTRNT: Checking LP row 79 -> pool row 79
+DEBUG CONSTRNT: Pool row 79 has lprow=79, expected 79
+DEBUG CONSTRNT: Checking LP row 80 -> pool row 80
+DEBUG CONSTRNT: Pool row 80 has lprow=80, expected 80
+DEBUG CONSTRNT: Checking LP row 81 -> pool row 81
+DEBUG CONSTRNT: Pool row 81 has lprow=81, expected 81
+DEBUG CONSTRNT: Checking LP row 82 -> pool row 82
+DEBUG CONSTRNT: Pool row 82 has lprow=82, expected 82
+DEBUG CONSTRNT: Checking LP row 83 -> pool row 83
+DEBUG CONSTRNT: Pool row 83 has lprow=83, expected 83
+DEBUG CONSTRNT: Checking LP row 84 -> pool row 84
+DEBUG CONSTRNT: Pool row 84 has lprow=84, expected 84
+DEBUG CONSTRNT: Checking LP row 85 -> pool row 85
+DEBUG CONSTRNT: Pool row 85 has lprow=85, expected 85
+DEBUG CONSTRNT: Checking LP row 86 -> pool row 86
+DEBUG CONSTRNT: Pool row 86 has lprow=86, expected 86
+DEBUG CONSTRNT: Checking LP row 87 -> pool row 87
+DEBUG CONSTRNT: Pool row 87 has lprow=87, expected 87
+DEBUG CONSTRNT: Checking LP row 88 -> pool row 88
+DEBUG CONSTRNT: Pool row 88 has lprow=88, expected 88
+DEBUG CONSTRNT: Checking LP row 89 -> pool row 89
+DEBUG CONSTRNT: Pool row 89 has lprow=89, expected 89
+DEBUG CONSTRNT: Checking LP row 90 -> pool row 90
+DEBUG CONSTRNT: Pool row 90 has lprow=90, expected 90
+DEBUG CONSTRNT: Checking LP row 91 -> pool row 91
+DEBUG CONSTRNT: Pool row 91 has lprow=91, expected 91
+DEBUG CONSTRNT: Checking LP row 92 -> pool row 92
+DEBUG CONSTRNT: Pool row 92 has lprow=92, expected 92
+DEBUG CONSTRNT: Checking LP row 93 -> pool row 93
+DEBUG CONSTRNT: Pool row 93 has lprow=93, expected 93
+DEBUG CONSTRNT: Checking LP row 94 -> pool row 94
+DEBUG CONSTRNT: Pool row 94 has lprow=94, expected 94
+DEBUG CONSTRNT: Checking LP row 95 -> pool row 95
+DEBUG CONSTRNT: Pool row 95 has lprow=95, expected 95
+DEBUG CONSTRNT: Checking LP row 96 -> pool row 96
+DEBUG CONSTRNT: Pool row 96 has lprow=96, expected 96
+DEBUG CONSTRNT: Checking LP row 97 -> pool row 97
+DEBUG CONSTRNT: Pool row 97 has lprow=97, expected 97
+DEBUG CONSTRNT: Checking LP row 98 -> pool row 98
+DEBUG CONSTRNT: Pool row 98 has lprow=98, expected 98
+DEBUG CONSTRNT: Checking LP row 99 -> pool row 99
+DEBUG CONSTRNT: Pool row 99 has lprow=99, expected 99
+DEBUG CONSTRNT: Checking LP row 100 -> pool row 100
+DEBUG CONSTRNT: Pool row 100 has lprow=100, expected 100
+DEBUG CONSTRNT: Checking LP row 101 -> pool row 101
+DEBUG CONSTRNT: Pool row 101 has lprow=101, expected 101
+DEBUG CONSTRNT: Checking LP row 102 -> pool row 102
+DEBUG CONSTRNT: Pool row 102 has lprow=102, expected 102
+DEBUG CONSTRNT: Checking LP row 103 -> pool row 103
+DEBUG CONSTRNT: Pool row 103 has lprow=103, expected 103
+DEBUG CONSTRNT: Checking LP row 104 -> pool row 104
+DEBUG CONSTRNT: Pool row 104 has lprow=104, expected 104
+DEBUG CONSTRNT: Checking LP row 105 -> pool row 105
+DEBUG CONSTRNT: Pool row 105 has lprow=105, expected 105
+DEBUG CONSTRNT: Checking LP row 106 -> pool row 106
+DEBUG CONSTRNT: Pool row 106 has lprow=106, expected 106
+DEBUG CONSTRNT: Checking LP row 107 -> pool row 107
+DEBUG CONSTRNT: Pool row 107 has lprow=107, expected 107
+DEBUG CONSTRNT: Checking LP row 108 -> pool row 108
+DEBUG CONSTRNT: Pool row 108 has lprow=108, expected 108
+DEBUG CONSTRNT: Checking LP row 109 -> pool row 109
+DEBUG CONSTRNT: Pool row 109 has lprow=109, expected 109
+DEBUG CONSTRNT: Checking LP row 110 -> pool row 110
+DEBUG CONSTRNT: Pool row 110 has lprow=110, expected 110
+DEBUG CONSTRNT: Checking LP row 111 -> pool row 111
+DEBUG CONSTRNT: Pool row 111 has lprow=111, expected 111
+DEBUG CONSTRNT: Checking LP row 112 -> pool row 112
+DEBUG CONSTRNT: Pool row 112 has lprow=112, expected 112
+DEBUG CONSTRNT: Checking LP row 113 -> pool row 113
+DEBUG CONSTRNT: Pool row 113 has lprow=113, expected 113
+DEBUG CONSTRNT: Checking LP row 114 -> pool row 114
+DEBUG CONSTRNT: Pool row 114 has lprow=114, expected 114
+DEBUG CONSTRNT: Checking LP row 115 -> pool row 115
+DEBUG CONSTRNT: Pool row 115 has lprow=115, expected 115
+DEBUG CONSTRNT: Checking LP row 116 -> pool row 116
+DEBUG CONSTRNT: Pool row 116 has lprow=116, expected 116
+DEBUG CONSTRNT: Checking LP row 117 -> pool row 117
+DEBUG CONSTRNT: Pool row 117 has lprow=117, expected 117
+DEBUG CONSTRNT: Checking LP row 118 -> pool row 118
+DEBUG CONSTRNT: Pool row 118 has lprow=118, expected 118
+DEBUG CONSTRNT: Checking LP row 119 -> pool row 119
+DEBUG CONSTRNT: Pool row 119 has lprow=119, expected 119
+DEBUG CONSTRNT: Checking LP row 120 -> pool row 120
+DEBUG CONSTRNT: Pool row 120 has lprow=120, expected 120
+DEBUG CONSTRNT: Checking LP row 121 -> pool row 121
+DEBUG CONSTRNT: Pool row 121 has lprow=121, expected 121
+DEBUG CONSTRNT: Checking LP row 122 -> pool row 122
+DEBUG CONSTRNT: Pool row 122 has lprow=122, expected 122
+DEBUG CONSTRNT: Checking LP row 123 -> pool row 123
+DEBUG CONSTRNT: Pool row 123 has lprow=123, expected 123
+DEBUG CONSTRNT: Checking LP row 124 -> pool row 124
+DEBUG CONSTRNT: Pool row 124 has lprow=124, expected 124
+DEBUG CONSTRNT: Checking LP row 125 -> pool row 125
+DEBUG CONSTRNT: Pool row 125 has lprow=125, expected 125
+DEBUG CONSTRNT: Checking LP row 126 -> pool row 126
+DEBUG CONSTRNT: Pool row 126 has lprow=126, expected 126
+DEBUG CONSTRNT: Checking LP row 127 -> pool row 127
+DEBUG CONSTRNT: Pool row 127 has lprow=127, expected 127
+DEBUG CONSTRNT: Checking LP row 128 -> pool row 128
+DEBUG CONSTRNT: Pool row 128 has lprow=128, expected 128
+DEBUG CONSTRNT: Checking LP row 129 -> pool row 129
+DEBUG CONSTRNT: Pool row 129 has lprow=129, expected 129
+DEBUG CONSTRNT: Checking LP row 130 -> pool row 130
+DEBUG CONSTRNT: Pool row 130 has lprow=130, expected 130
+DEBUG CONSTRNT: Checking LP row 131 -> pool row 131
+DEBUG CONSTRNT: Pool row 131 has lprow=131, expected 131
+DEBUG CONSTRNT: Checking LP row 132 -> pool row 132
+DEBUG CONSTRNT: Pool row 132 has lprow=132, expected 132
+DEBUG CONSTRNT: Checking LP row 133 -> pool row 161
+DEBUG CONSTRNT: Pool row 161 has lprow=133, expected 133
+DEBUG CONSTRNT: Checking LP row 134 -> pool row 162
+DEBUG CONSTRNT: Pool row 162 has lprow=134, expected 134
+ % @PAP adding 135 rows, 494 nz to LP
+DEBUG BB: Processing node 0, calling compute_good_lower_bound
+LP PHASE: Starting dual phase (iter=0)
+ITER 1: row=1, varin=163, theta=19.000000, up=1.000000
+ITER 2: row=1, varin=138, theta=9.000000, up=1.000000
+ITER 3: row=1, varin=148, theta=8.000000, up=1.000000
+ITER 4: row=1, varin=151, theta=4.666667, up=1.000000
+ITER 5: row=1, varin=157, theta=11.000000, up=1.000000
+ITER 6: row=1, varin=155, theta=2.500000, up=1.000000
+ITER 7: row=1, varin=161, theta=6.000000, up=1.000000
+ITER 8: row=1, varin=170, theta=5.000000, up=1.000000
+ITER 9: row=1, varin=144, theta=2.000000, up=1.000000
+ITER 10: row=1, varin=149, theta=0.666667, up=1.000000
+DEBUG SOLUTION: Read 40 FST + 20 not_covered variables from LP solution (lp->rows=135)
+DEBUG SOLUTION: LP solution array indices: FST[136-175], not_covered[176-195]
+DEBUG SOLUTION: lp->best_solution[0] = 999999999999999983222784.000000
+DEBUG SOLUTION: lp->best_solution[1] = 0.000000
+DEBUG SOLUTION: lp->best_solution[2] = 0.000000
+DEBUG SOLUTION: lp->best_solution[3] = 0.000000
+DEBUG SOLUTION: lp->best_solution[4] = 0.000000
+DEBUG SOLUTION: lp->best_solution[5] = 0.000000
+DEBUG SOLUTION: lp->best_solution[6] = 0.000000
+DEBUG SOLUTION: lp->best_solution[7] = 0.000000
+DEBUG SOLUTION: lp->best_solution[8] = 0.000000
+DEBUG SOLUTION: lp->best_solution[9] = 0.000000
+DEBUG SOLUTION: lp->best_solution[10] = 0.000000
+DEBUG SOLUTION: lp->best_solution[11] = 0.000000
+DEBUG SOLUTION: lp->best_solution[12] = 0.000000
+DEBUG SOLUTION: lp->best_solution[13] = 0.000000
+DEBUG SOLUTION: lp->best_solution[14] = 0.000000
+  % @PL 135 rows, 60 cols, 554 nonzeros, 22 slack, 113 tight.
+  % Node 0 LP 1 Solution, length = 999999999999999983222784.000000, 0.00 0
+  % DEBUG LP_VARS: Optimal variable values:
+  % DEBUG LP_VARS: x[0] = 0.000000 (FST 0)
+  % DEBUG LP_VARS: x[1] = 0.000000 (FST 1)
+  % DEBUG LP_VARS: x[2] = 0.000000 (FST 2)
+  % DEBUG LP_VARS: x[3] = 0.000000 (FST 3)
+  % DEBUG LP_VARS: x[4] = 0.000000 (FST 4)
+  % DEBUG LP_VARS: x[5] = 0.000000 (FST 5)
+  % DEBUG LP_VARS: x[6] = 0.000000 (FST 6)
+  % DEBUG LP_VARS: x[7] = 0.000000 (FST 7)
+  % DEBUG LP_VARS: x[8] = 0.000000 (FST 8)
+  % DEBUG LP_VARS: x[9] = 0.000000 (FST 9)
+  % DEBUG LP_VARS: x[10] = 0.000000 (FST 10)
+  % DEBUG LP_VARS: x[11] = 0.000000 (FST 11)
+  % DEBUG LP_VARS: x[12] = 0.000000 (FST 12)
+  % DEBUG LP_VARS: x[13] = 0.000000 (FST 13)
+  % DEBUG LP_VARS: x[14] = 0.000000 (FST 14)
+  % DEBUG LP_VARS: x[15] = 0.000000 (FST 15)
+  % DEBUG LP_VARS: x[16] = 0.000000 (FST 16)
+  % DEBUG LP_VARS: x[17] = 0.000000 (FST 17)
+  % DEBUG LP_VARS: x[18] = 0.000000 (FST 18)
+  % DEBUG LP_VARS: x[19] = 0.000000 (FST 19)
+  % DEBUG LP_VARS: x[20] = 0.000000 (FST 20)
+  % DEBUG LP_VARS: x[21] = 0.000000 (FST 21)
+  % DEBUG LP_VARS: x[22] = 0.000000 (FST 22)
+  % DEBUG LP_VARS: x[23] = 0.000000 (FST 23)
+  % DEBUG LP_VARS: x[24] = 0.000000 (FST 24)
+  % DEBUG LP_VARS: x[25] = 0.000000 (FST 25)
+  % DEBUG LP_VARS: x[26] = 0.000000 (FST 26)
+  % DEBUG LP_VARS: x[27] = 0.000000 (FST 27)
+  % DEBUG LP_VARS: x[28] = 0.000000 (FST 28)
+  % DEBUG LP_VARS: x[29] = 0.000000 (FST 29)
+  % DEBUG LP_VARS: x[30] = 0.000000 (FST 30)
+  % DEBUG LP_VARS: x[31] = 0.000000 (FST 31)
+  % DEBUG LP_VARS: x[32] = 0.000000 (FST 32)
+  % DEBUG LP_VARS: x[33] = 0.000000 (FST 33)
+  % DEBUG LP_VARS: x[34] = 0.000000 (FST 34)
+  % DEBUG LP_VARS: x[35] = 0.000000 (FST 35)
+  % DEBUG LP_VARS: x[36] = 0.000000 (FST 36)
+  % DEBUG LP_VARS: x[37] = 0.000000 (FST 37)
+  % DEBUG LP_VARS: x[38] = 0.000000 (FST 38)
+  % DEBUG LP_VARS: x[39] = 0.000000 (FST 39)
+  % DEBUG LP_VARS: not_covered[0] = 0.000000 (terminal 0)
+  % DEBUG LP_VARS: not_covered[1] = 0.000000 (terminal 1)
+  % DEBUG LP_VARS: not_covered[2] = 0.000000 (terminal 2)
+  % DEBUG LP_VARS: not_covered[3] = 0.000000 (terminal 3)
+  % DEBUG LP_VARS: not_covered[4] = 0.000000 (terminal 4)
+  % DEBUG LP_VARS: not_covered[5] = 0.000000 (terminal 5)
+  % DEBUG LP_VARS: not_covered[6] = 0.000000 (terminal 6)
+  % DEBUG LP_VARS: not_covered[7] = 0.000000 (terminal 7)
+  % DEBUG LP_VARS: not_covered[8] = 0.000000 (terminal 8)
+  % DEBUG LP_VARS: not_covered[9] = 0.000000 (terminal 9)
+  % DEBUG LP_VARS: not_covered[10] = 0.000000 (terminal 10)
+  % DEBUG LP_VARS: not_covered[11] = 0.000000 (terminal 11)
+  % DEBUG LP_VARS: not_covered[12] = 0.000000 (terminal 12)
+  % DEBUG LP_VARS: not_covered[13] = 0.000000 (terminal 13)
+  % DEBUG LP_VARS: not_covered[14] = 0.000000 (terminal 14)
+  % DEBUG LP_VARS: not_covered[15] = 0.000000 (terminal 15)
+  % DEBUG LP_VARS: not_covered[16] = 0.000000 (terminal 16)
+  % DEBUG LP_VARS: not_covered[17] = 0.000000 (terminal 17)
+  % DEBUG LP_VARS: not_covered[18] = 0.000000 (terminal 18)
+  % DEBUG LP_VARS: not_covered[19] = 0.000000 (terminal 19)
+DEBUG BB: compute_good_lower_bound returned status=1
+DEBUG BB: Node 0 is INFEASIBLE
+ %       0     0    infeasible
+DEBUG BB: Starting new iteration, preempt=0
+DEBUG BB: Selected node=(nil)
+DEBUG BB: No more nodes to process, exiting
+./bb: No feasible solutions found.
+./bb: The problem is infeasible.

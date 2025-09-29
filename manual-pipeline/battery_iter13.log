@@ -1,0 +1,24 @@
+🔋 Battery Update Wrapper
+=========================
+Terminals file: manual-pipeline/terminals_iter12.txt
+Solution file:  manual-pipeline/solution_iter12.txt
+Output file:    manual-pipeline/terminals_iter13.txt
+Charge rate:    10.0%
+Demand rate:    2.0%
+=========================
+
+✅ Found 382 selected FST(s) - proceeding with normal coverage update
+
+📊 Coverage Status: 14/20 terminals covered
+
+🔋 Updating Battery Levels:
+   Equation: battery[j]^(t+1) = battery[j]^t + charge_rate×(1-not_covered[j]) - demand_rate[j]
+   Where: charge_rate=10.0%, demand_rate=2.0%
+
+
+📊 Battery Update Summary:
+   Average battery level: 91.8%
+   Fully charged terminals: 12/20
+   Terminals needing charge: 8
+✅ Battery update completed successfully!
+📁 Updated terminals saved to: manual-pipeline/terminals_iter13.txt

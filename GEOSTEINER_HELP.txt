@@ -1,0 +1,410 @@
+================================================================================
+                    GEOSTEINER BUDGET-CONSTRAINED OPTIMIZATION GUIDE
+================================================================================
+
+This guide walks you through using the modified GeoSteiner code for solving
+multi-objective budget-constrained Steiner tree problems with battery-aware
+terminal selection.
+
+================================================================================
+1. INSTALLATION AND SETUP
+================================================================================
+
+1.1 Install Required Packages (Ubuntu/Debian)
+---------------------------------------------
+sudo apt update
+sudo apt install build-essential
+sudo apt install gcc g++ make
+sudo apt install libc6-dev
+sudo apt install libgmp-dev
+sudo apt install cplex-dev        # If available, or install IBM CPLEX separately
+sudo apt install ghostscript      # For PostScript/PDF generation
+sudo apt install gnuplot          # For plotting (optional)
+
+1.2 Alternative CPLEX Installation
+----------------------------------
+If CPLEX is not available via package manager:
+1. Download IBM CPLEX Optimization Studio from IBM website
+2. Install following IBM instructions
+3. Add CPLEX libraries to your system path
+
+1.3 Compile GeoSteiner
+---------------------
+cd /path/to/geosteiner-5.3
+make clean
+make
+
+Note: If compilation fails due to CPLEX, check that CPLEX_HOME is set:
+export CPLEX_HOME=/opt/ibm/ILOG/CPLEX_Studio/cplex
+export LD_LIBRARY_PATH=$CPLEX_HOME/lib/x86-64_linux/static_pic:$LD_LIBRARY_PATH
+
+1.4 Verify Installation
+-----------------------
+./rand_points 4          # Should generate 4 random points
+./efst --help           # Should show efst help
+./bb --help             # Should show bb help
+
+================================================================================
+2. BASIC WORKFLOW OVERVIEW
+================================================================================
+
+The complete workflow involves 5 main steps:
+1. Generate random terminal data
+2. Compute Full Steiner Trees (FSTs)
+3. Visualize all FSTs
+4. Solve budget-constrained optimization
+5. Generate final network visualization
+
+================================================================================
+3. STEP-BY-STEP EXECUTION
+================================================================================
+
+3.1 STEP 1: Generate Terminal Data
+----------------------------------
+# Generate 10 random terminals and save to file
+./rand_points 10 > terminals_10.txt
+
+# View the generated data
+cat terminals_10.txt
+
+Expected output format:
+10 DefineTerminals
+    0.4588350000000000    0.2373240000000000    DT
+    0.1270640000000000    0.3509960000000000    DT
+    ...
+
+3.2 STEP 2: Compute Full Steiner Trees (FSTs)
+---------------------------------------------
+# Use the terminal data to compute all possible FSTs
+cat terminals_10.txt | ./efst > fsts_10.txt
+
+# Alternatively, in one pipeline:
+./rand_points 10 | ./efst > fsts_10.txt
+
+# View FST data (large file, use head to see beginning)
+head -50 fsts_10.txt
+
+3.3 STEP 3: Extract FST Data and Visualize
+------------------------------------------
+# 3.3a: Extract FST information as text file
+# Each row contains: terminals tree_length battery_score
+cat fsts_10.txt | ./dumpfst -l | grep -E "^[ ]*[0-9].*[0-9]$" > fst_data.txt
+
+# View the FST data
+cat fst_data.txt
+
+# Example output format:
+# 2 0 1 475673.371283 126.900000    # FST with terminals 2,0,1, length=475673, battery=126.9
+# 1 2 132683.843689 126.900000      # FST with terminals 1,2, length=132683, battery=126.9
+# 0 1 350704.034800 38.300000       # FST with terminals 0,1, length=350704, battery=38.3
+
+# 3.3b: Create PostScript visualization of all FSTs (fly specks - individual plots)
+(cat prelude.ps; cat fsts_10.txt | ./plotfst -f) > all_fsts_plot.ps
+
+# Convert PostScript to PDF (if needed)
+ps2pdf all_fsts_plot.ps all_fsts_plot.pdf
+
+# View the plot
+evince all_fsts_plot.pdf    # On Linux
+# or open all_fsts_plot.ps with your preferred viewer
+
+3.4 STEP 4: Solve Budget-Constrained Optimization
+--------------------------------------------------
+# Set budget constraint and solve multi-objective problem
+export GEOSTEINER_BUDGET=650000
+
+# Run branch-and-bound solver
+cat fsts_10.txt | env GEOSTEINER_BUDGET=650000 ./bb > solution_10.txt
+
+# Alternatively, complete pipeline:
+./rand_points 10 | ./efst | env GEOSTEINER_BUDGET=650000 ./bb > solution_10.txt
+
+# View solution
+cat solution_10.txt
+
+# For different budget levels, try:
+./rand_points 10 | ./efst | env GEOSTEINER_BUDGET=200000 ./bb > solution_small_budget.txt
+./rand_points 10 | ./efst | env GEOSTEINER_BUDGET=1000000 ./bb > solution_large_budget.txt
+
+3.5 STEP 5: Generate Final Network Visualization
+------------------------------------------------
+# Extract the optimal network and create final plot
+cat solution_10.txt | ./dumpfst > optimal_network.ps
+
+# Convert to PDF
+ps2pdf optimal_network.ps optimal_network.pdf
+
+# For EPS format:
+cat solution_10.txt | ./dumpfst > optimal_network.eps
+
+================================================================================
+4. UNDERSTANDING THE OUTPUT
+================================================================================
+
+4.1 Terminal Data Format
+------------------------
+Each terminal has:
+- X, Y coordinates (normalized 0-1)
+- Battery level (random value, used in multi-objective optimization)
+
+4.2 FST Data Format
+-------------------
+The efst output contains:
+- All possible Full Steiner Trees
+- Tree costs and battery scores
+- Terminal connectivity information
+
+4.3 Solution Output
+------------------
+The bb solver outputs:
+- Selected FSTs (e.g., "fs5: 8 7" means FST 5 connects terminals 8 and 7)
+- Final objective value
+- Budget utilization
+- Terminal coverage statistics
+
+Key solution metrics:
+- "Z" value: Final objective cost
+- Budget usage vs. limit
+- Number of covered vs. uncovered terminals
+
+================================================================================
+5. ADVANCED USAGE
+================================================================================
+
+5.1 Adjusting Parameters
+-----------------------
+# Different terminal counts
+./rand_points 4 | ./efst | env GEOSTEINER_BUDGET=200000 ./bb
+./rand_points 15 | ./efst | env GEOSTEINER_BUDGET=800000 ./bb
+./rand_points 20 | ./efst | env GEOSTEINER_BUDGET=1000000 ./bb
+
+# Different budget constraints
+export GEOSTEINER_BUDGET=100000    # Tight budget
+export GEOSTEINER_BUDGET=500000    # Medium budget
+export GEOSTEINER_BUDGET=1000000   # Large budget
+
+5.2 Timeout for Large Problems
+------------------------------
+# Use timeout for large instances that might run too long
+timeout 60s ./bb < fsts_20.txt
+
+# With complete pipeline:
+timeout 120s bash -c './rand_points 20 | ./efst | env GEOSTEINER_BUDGET=800000 ./bb'
+
+5.3 Batch Processing
+-------------------
+# Create batch script for multiple runs
+cat > batch_run.sh << 'EOF'
+#!/bin/bash
+for n in 4 6 8 10 12; do
+    for budget in 200000 500000 800000; do
+        echo "Running ${n} terminals with budget ${budget}"
+        ./rand_points ${n} | ./efst | env GEOSTEINER_BUDGET=${budget} timeout 60s ./bb > solution_${n}_${budget}.txt
+        echo "Completed ${n} terminals with budget ${budget}"
+    done
+done
+EOF
+
+chmod +x batch_run.sh
+./batch_run.sh
+
+================================================================================
+6. TROUBLESHOOTING
+================================================================================
+
+6.1 Compilation Issues
+---------------------
+Problem: "CPLEX not found"
+Solution:
+- Install CPLEX properly
+- Set CPLEX_HOME environment variable
+- Check library paths
+
+Problem: "make: command not found"
+Solution: sudo apt install build-essential
+
+6.2 Runtime Issues
+------------------
+Problem: "Floating point exception"
+Solution: This was fixed in the modified version. If still occurring:
+- Check input data format
+- Verify budget value is reasonable
+- Try smaller problem instances
+
+Problem: "Infinite loop / hanging"
+Solution: This was fixed in the modified version. Use timeout as safety:
+timeout 60s ./bb < input.txt
+
+Problem: "No solution found"
+Solution:
+- Increase budget constraint
+- Check that terminals were generated properly
+- Verify FST computation completed
+
+6.3 Output Issues
+----------------
+Problem: "Empty or corrupted output"
+Solution:
+- Check each pipeline step individually
+- Verify input file formats
+- Look for error messages in stderr
+
+Problem: "PostScript viewer issues"
+Solution:
+- Install ghostscript: sudo apt install ghostscript
+- Convert to PDF: ps2pdf file.ps file.pdf
+- Use alternative viewers
+
+================================================================================
+7. EXAMPLE COMPLETE SESSION
+================================================================================
+
+# Full example session from start to finish:
+
+# 1. Generate 8 terminals
+echo "Step 1: Generating terminals..."
+./rand_points 8 > example_terminals.txt
+echo "Generated $(grep -c DT example_terminals.txt) terminals"
+
+# 2. Compute FSTs
+echo "Step 2: Computing FSTs..."
+cat example_terminals.txt | ./efst > example_fsts.txt
+echo "FST computation complete"
+
+# 3a. Extract FST data as text
+echo "Step 3a: Extracting FST data..."
+cat example_fsts.txt | ./dumpfst -l | grep -E "^[ ]*[0-9].*[0-9]$" > example_fst_data.txt
+echo "FST data saved as example_fst_data.txt"
+echo "First few FSTs:"
+head -5 example_fst_data.txt
+
+# 3b. Visualize all FSTs
+echo "Step 3b: Creating FST visualization..."
+(cat prelude.ps; cat example_fsts.txt | ./plotfst -f) > example_all_fsts.ps
+ps2pdf example_all_fsts.ps example_all_fsts.pdf
+echo "All FSTs plot saved as example_all_fsts.pdf"
+
+# 4. Solve optimization with medium budget
+echo "Step 4: Solving optimization..."
+cat example_fsts.txt | env GEOSTEINER_BUDGET=400000 ./bb > example_solution.txt
+echo "Optimization complete"
+
+# 5. Extract solution metrics
+echo "Step 5: Solution summary:"
+grep "fs[0-9]:" example_solution.txt
+grep "Final objective" example_solution.txt || grep "Z.*=" example_solution.txt
+
+# 6. Create final network plot
+echo "Step 6: Creating final network plot..."
+cat example_solution.txt | ./dumpfst > example_optimal.ps
+ps2pdf example_optimal.ps example_optimal.pdf
+echo "Final network saved as example_optimal.pdf"
+
+echo "Session complete! Check the following files:"
+echo "- example_terminals.txt: Input terminal data"
+echo "- example_fsts.txt: All computed FSTs (binary format)"
+echo "- example_fst_data.txt: FST data in text format (terminals, length, battery)"
+echo "- example_all_fsts.pdf: Visualization of all FSTs"
+echo "- example_solution.txt: Optimization solution"
+echo "- example_optimal.pdf: Final optimal network"
+
+================================================================================
+8. UNDERSTANDING THE MULTI-OBJECTIVE FORMULATION
+================================================================================
+
+8.1 Objective Function
+----------------------
+The solver minimizes:
+  Σ(tree_cost[i] + α × battery_cost[i]) × x[i] + penalty × Σ(not_covered[j])
+
+Where:
+- tree_cost[i]: Euclidean length of FST i
+- battery_cost[i]: Sum of battery levels for terminals in FST i
+- α = 100: Weight parameter (higher α prioritizes low-battery terminals)
+- x[i]: Binary variable (1 if FST i is selected, 0 otherwise)
+- not_covered[j]: Binary variable (1 if terminal j is uncovered, 0 otherwise)
+- penalty: Large value applied to uncovered terminals
+
+8.2 Constraints
+---------------
+Budget constraint: Σ tree_cost[i] × x[i] ≤ BUDGET_LIMIT
+Coverage constraints: Each terminal can be covered by at most one FST
+FST selection: Each x[i] ∈ {0,1}
+
+8.3 Solution Interpretation
+---------------------------
+- Selected FSTs form the final network
+- Some terminals may remain uncovered (with penalty cost)
+- Solution balances tree cost, battery awareness, and coverage
+- Higher budget allows better coverage and lower-cost solutions
+
+================================================================================
+9. DUMPFST OPTIONS AND OUTPUT FORMATS
+================================================================================
+
+9.1 dumpfst Command Options
+---------------------------
+./dumpfst -l        # Include FST lengths and battery scores
+./dumpfst -s        # Sort terminals within each FST
+./dumpfst -a        # Include all FSTs (even unused ones)
+./dumpfst -d        # Display FST statistics
+./dumpfst -h        # Show histogram of FST sizes
+./dumpfst -als      # Combine options: all FSTs, with lengths, sorted
+
+9.2 Text Output Format (with -l option)
+---------------------------------------
+Format: [terminals...] [tree_length] [battery_score]
+
+Examples:
+ 2 0 1 475673.371283 126.900000    # 3-terminal FST
+ 1 2 132683.843689 166.300000      # 2-terminal FST
+ 0 1 350704.034800 38.300000       # 2-terminal FST
+
+Extraction command:
+cat fsts.txt | ./dumpfst -l | grep -E "^[ ]*[0-9].*[0-9]$" > fst_data.txt
+
+9.3 PostScript Output (using plotfst)
+-------------------------------------
+# Create visualization with fly specks (individual FST plots)
+(cat prelude.ps; cat fsts.txt | ./plotfst -f) > plot.ps
+ps2pdf plot.ps plot.pdf            # Convert to PDF
+
+# Other plotfst options:
+# -g: grouped fly specks
+# -o: overlaid FSTs
+# -p: points only
+
+================================================================================
+10. FILE EXTENSIONS AND FORMATS
+================================================================================
+
+.txt files: Human-readable text format
+.ps files:  PostScript graphics (viewable with ghostscript)
+.pdf files: PDF format (converted from PostScript)
+.eps files: Encapsulated PostScript (for inclusion in documents)
+
+================================================================================
+10. PERFORMANCE GUIDELINES
+================================================================================
+
+Terminal Count | Expected Runtime | Recommended Budget Range
+---------------|------------------|-------------------------
+4-6 terminals  | < 1 second      | 100,000 - 500,000
+8-10 terminals | 1-10 seconds    | 200,000 - 800,000
+12-15 terminals| 10-60 seconds   | 500,000 - 1,200,000
+16-20 terminals| 1-10 minutes    | 800,000 - 2,000,000
+20+ terminals  | 10+ minutes     | Use timeout, increase budget
+
+Note: Runtime depends heavily on budget constraints and problem complexity.
+Tighter budgets may solve faster due to more pruning in branch-and-bound.
+
+================================================================================
+END OF GUIDE
+================================================================================
+
+For additional help or issues, check:
+- Original GeoSteiner documentation
+- CPLEX documentation
+- Debug output with verbose flags: ./bb --verbose (if implemented)
+
+Last updated: 2025
