@@ -1,0 +1,59 @@
+# Compiled Object files
+*.o
+*.obj
+*.lo
+
+# Libraries
+*.a
+*.la
+*.lai
+*.lib
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+bb
+efst
+dumpfst
+demo1
+demo2
+demo3
+demo4
+analyze_ckpt
+battery_wrapper
+docgen
+
+# Dependency files
+*.dep
+
+# Build directories
+.libs/
+autom4te.cache/
+
+# Configuration files (keep .in versions)
+config.h
+config.log
+config.status
+Makefile
+
+# Log files
+*.log
+
+# Temporary files
+*~
+*.tmp
+*.temp
+
+# Debug files
+*.pdb
+
+# Zone.Identifier files (Windows)
+*:Zone.Identifier
+
+# Backup files
+*~
+*.bak
