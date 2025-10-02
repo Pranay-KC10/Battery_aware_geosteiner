@@ -39,6 +39,87 @@
 #include <math.h>
 #include <ctype.h>
 
+/* Extract final mip gap from solution.txt */
+static double parse_final_mip_gap(const char *solution_file) {
+    FILE *fp = fopen(solution_file, "r");
+    if (!fp) return -1.0;
+
+    char line[4096];
+    double best_bound = NAN, incumbent = NAN, gap = NAN;
+    double latest_best_z = NAN, latest_branch_z0 = NAN, latest_branch_z1 = NAN;
+
+    while (fgets(line, sizeof(line), fp)) {
+        /* Try pattern: "Best bound = X, Best integer = Y" */
+        double bb, bi;
+        if (sscanf(line, "Best bound = %lf , Best integer = %lf", &bb, &bi) == 2) {
+            best_bound = bb; incumbent = bi;
+            if (!isnan(best_bound) && !isnan(incumbent) && incumbent != 0.0) {
+                gap = fabs(incumbent - best_bound) / fabs(incumbent);
+            }
+        }
+
+        /* Try pattern: "MIP gap = Z%" */
+        double g;
+        if (sscanf(line, "MIP gap = %lf%%", &g) == 1) {
+            gap = g / 100.0;
+        }
+
+        /* Try pattern: "Solution status X: MIP optimal, tolerance" */
+        if (strstr(line, "MIP optimal") && strstr(line, "tolerance")) {
+            char *gap_str = strstr(line, "(");
+            if (gap_str) {
+                gap_str++; /* Skip opening parenthesis */
+                double g;
+                if (sscanf(gap_str, "%lf%%", &g) == 1) {
+                    gap = g / 100.0;
+                }
+            }
+        }
+
+        /* Try GeoSteiner debug pattern: "New best: x..., Z = value" */
+        double z_val;
+        if (strstr(line, "New best:") && strstr(line, "Z =")) {
+            char *z_pos = strstr(line, "Z =");
+            if (z_pos && sscanf(z_pos, "Z = %lf", &z_val) == 1) {
+                latest_best_z = z_val;
+            }
+        }
+
+        /* Try GeoSteiner branch pattern: "Best branch is x..., Z0 = val1, Z1 = val2" */
+        double z0_val, z1_val;
+        if (strstr(line, "Best branch is") && strstr(line, "Z0 =") && strstr(line, "Z1 =")) {
+            char *z0_pos = strstr(line, "Z0 =");
+            char *z1_pos = strstr(line, "Z1 =");
+            if (z0_pos && z1_pos &&
+                sscanf(z0_pos, "Z0 = %lf", &z0_val) == 1 &&
+                sscanf(z1_pos, "Z1 = %lf", &z1_val) == 1) {
+                latest_branch_z0 = z0_val;
+                latest_branch_z1 = z1_val;
+                /* Use the smaller (better) of the two as incumbent, larger as bound */
+                if (!isnan(z0_val) && !isnan(z1_val)) {
+                    incumbent = (z0_val < z1_val) ? z0_val : z1_val;
+                    best_bound = (z0_val > z1_val) ? z0_val : z1_val;
+                    if (incumbent != 0.0) {
+                        gap = fabs(best_bound - incumbent) / fabs(incumbent);
+                    }
+                }
+            }
+        }
+    }
+
+    /* If we have recent best values but no calculated gap, try to estimate */
+    if (isnan(gap) && !isnan(latest_best_z) && !isnan(latest_branch_z0) && !isnan(latest_branch_z1)) {
+        incumbent = latest_best_z;
+        best_bound = (latest_branch_z0 > latest_branch_z1) ? latest_branch_z0 : latest_branch_z1;
+        if (incumbent != 0.0) {
+            gap = fabs(best_bound - incumbent) / fabs(incumbent);
+        }
+    }
+
+    fclose(fp);
+    return gap;
+}
+
 /* Data structures for visualization */
 typedef struct {
     double x, y;
@@ -85,6 +166,7 @@ static int run_command(const char* command, int verbose);
 static void create_directory(const char* dir_path);
 static double random_double(void);
 static double random_battery_level(void);
+static double parse_final_mip_gap(const char *solution_file);
 
 /* Global variables for simulation parameters */
 static int g_verbose = 0;
@@ -241,7 +323,16 @@ int main(int argc, char* argv[])
 	/* Step 3: Solve budget-constrained SMT */
 	printf("🎯 Step 3: Solving budget-constrained SMT (budget=%d)...\n", budget);
 	solve_smt(fsts_file, solution_file, budget, g_verbose);
-	printf("   ✅ Solution saved to: %s\n\n", solution_file);
+	printf("   ✅ Solution saved to: %s\n", solution_file);
+
+	/* Parse and report final MIP gap */
+	double final_gap = parse_final_mip_gap(solution_file);
+	if (final_gap >= 0.0) {
+		printf("   📊 Final MIP Gap: %.4f%% (%.6f)\n", final_gap * 100.0, final_gap);
+	} else {
+		printf("   ⚠️  Could not parse MIP gap from solution\n");
+	}
+	printf("\n");
 
 	/* Step 4: Generate HTML visualization */
 	printf("📊 Step 4: Generating rich HTML visualization...\n");
@@ -843,6 +934,14 @@ static void create_rich_visualization(const char* terminals_file, const char* fs
 	        (100.0 * covered_count) / num_terminals);
 	fprintf(fp, "                        <tr><td><strong>Total Cost:</strong></td><td>1,495,410</td></tr>\n");
 	fprintf(fp, "                        <tr><td><strong>Budget Utilization:</strong></td><td>99.7%%</td></tr>\n");
+
+	/* Add MIP gap information */
+	double final_gap = parse_final_mip_gap(solution_file);
+	if (final_gap >= 0.0) {
+		fprintf(fp, "                        <tr><td><strong>MIP Gap:</strong></td><td>%.4f%% (%.6f)</td></tr>\n", final_gap * 100.0, final_gap);
+	} else {
+		fprintf(fp, "                        <tr><td><strong>MIP Gap:</strong></td><td>Not available</td></tr>\n");
+	}
 	fprintf(fp, "                    </table>\n");
 	fprintf(fp, "                </div>\n");
 
